@@ -7,7 +7,7 @@
  */
 
 namespace App\Http\Controllers;
-use App\Models\Administrador;
+use App\Models\Cliente;
 
 
 /**
@@ -33,16 +33,19 @@ class TestController {
         }
          * 
          */
-        /*
-        //registra un nuevo admin
-        $admin = new Administrador();
         
-        $admin-> usuario ='liis';
-        $admin-> clave ='a';
-        $admin-> estado =true;
-        $admin-> external_id = utilidades\UUID::v4();
-        $admin-> save(); //modifica y guarda
-        */
+        //registra un nuevo admin
+        $cliente = new Cliente();
+        
+        $cliente-> user ='sam';
+        $cliente-> clave ='a';
+        $cliente-> nombres ='Samantha';
+        $cliente-> apellidos ='González';
+        $cliente-> estado =true;
+        $cliente-> ci ='1105663247';
+        $cliente-> external_id = utilidades\UUID::v4();
+        $cliente-> save(); //modifica y guarda
+        
         /*
         //registra una nueva noticia
         $not = new Noticia();

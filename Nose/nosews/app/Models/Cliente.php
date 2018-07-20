@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model{
     
-    protected $table ='local';
+    protected $table ='cliente';
     
     public $timestamps = false;//porque no tengo 
     //lista blanca
-    protected $fillable =['nombres','apellidos','ci','telefono','direccion','external_id','user'];
+    protected $fillable =['nombres','apellidos','ci','telefono','direccion','external_id','correo'];
     //lista negra
-    protected $guarded = ['id','correo','clave'];
+    protected $guarded = ['id'];
     
     //Relacion UNO a MUCHOS
     public function Menu(){
