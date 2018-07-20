@@ -11,15 +11,18 @@ CREATE TABLE `nose`.`local` (
   `external_id` VARCHAR(100) NOT NULL);
 
 
-CREATE TABLE `nose`.`cliente` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `nombres` VARCHAR(100) NOT NULL,
-  `apellidos` VARCHAR(100) NOT NULL,
-  `ci` VARCHAR(10) NOT NULL,
-  `correo` VARCHAR(50) NULL,
-  `direccion` VARCHAR(200) NULL,
-  `telefono` VARCHAR(15) NULL,
-  `external_id` VARCHAR(45) NOT NULL,
+CREATE TABLE `cliente` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(100) NOT NULL,
+  `apellidos` varchar(100) NOT NULL,
+  `ci` varchar(10) NOT NULL,
+  `correo` varchar(50) DEFAULT NULL,
+  `direccion` varchar(200) DEFAULT NULL,
+  `telefono` varchar(15) DEFAULT NULL,
+  `external_id` varchar(45) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `clave` varchar(50) NOT NULL,
+  `estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`));
   
     
