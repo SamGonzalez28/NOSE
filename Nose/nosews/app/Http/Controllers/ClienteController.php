@@ -74,7 +74,7 @@ class ClienteController {
         if ($clienteObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $client = Cliente::find($clienteObjeto->id_admin);
+                $client = Cliente::find($clienteObjeto->id_cliente);
                 if (isset($data["user"]))
                     $client->user = $data["user"];
                 if (isset($data["clave"]))
@@ -101,11 +101,11 @@ class ClienteController {
     }
     
     public function eliminar(Request $request,$external_id){
-        $clientObjeto=Administrador::where("external_id",$external_id)-> first();
+        $clientObjeto=Cliente::where("external_id",$external_id)-> first();
         if ($clientObjeto){
             if($request->isJson()){
                 $data=$request->json()->all();
-                $client= Cliente::find($clientObjeto->id_admin);
+                $client= Cliente::find($clientObjeto->id_cliente);
                if (isset($data["estado"]))
                     $client->estado = $data["estado"];
                 $client->save();

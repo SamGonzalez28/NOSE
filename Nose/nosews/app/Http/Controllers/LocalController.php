@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cliente;
+use App\Models\Local;
 use Illuminate\Http\Request;
 
 /**
@@ -28,7 +28,7 @@ class LocalController {
         if ($request->isJson()) {
             $data = $request->json()->all();
             try {
-                $local = new Cliente();
+                $local = new Local();
                 $local->nombre = $data["nombre"];
                 $local->direccion = $data["direccion"];
                 $local->ruc = $data["ruc"];
@@ -50,7 +50,7 @@ class LocalController {
 
         try {
             $data = $request->json()->all();
-            $local = Cliente::where("nombre", $data["nombre"])->where("clave", $data["clave"])->where("estado", true)->first();
+            $local = Local::where("nombre", $data["nombre"])->where("clave", $data["clave"])->where("estado", true)->first();
 
             if ($local) {
                 return response()->json(["nombre" => $local->nombre,
@@ -67,11 +67,11 @@ class LocalController {
     }
 
     public function modificar(Request $request, $external_id) {
-        $localObjeto = Cliente::where("external_id", $external_id)->first();
+        $localObjeto = Local::where("external_id", $external_id)->first();
         if ($localObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $local = Cliente::find($localObjeto->id_admin);
+                $local = Local::find($localObjeto->id_local);
                 if (isset($data["nombre"]))
                     $local->nombre = $data["nombre"];
                 if (isset($data["direccion"]))
@@ -94,11 +94,11 @@ class LocalController {
     }
 
     public function eliminar(Request $request, $external_id) {
-        $localObjeto = Administrador::where("external_id", $external_id)->first();
+        $localObjeto = Local::where("external_id", $external_id)->first();
         if ($localObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $local = Cliente::find($localObjeto->id_admin);
+                $local = Local::find($localObjeto->id_local);
                 if (isset($data["estado"]))
                     $local->estado = $data["estado"];
                 $local->save();
