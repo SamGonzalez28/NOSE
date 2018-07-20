@@ -10,9 +10,9 @@ class Cliente extends Model{
     
     public $timestamps = false;//porque no tengo 
     //lista blanca
-    protected $fillable =['nombres','apellidos','ci','telefono','direccion','external_id'];
+    protected $fillable =['nombres','apellidos','ci','telefono','direccion','external_id','user'];
     //lista negra
-    protected $guarded = ['id','correo'];
+    protected $guarded = ['id','correo','clave'];
     
     //Relacion UNO a MUCHOS
     public function Menu(){
