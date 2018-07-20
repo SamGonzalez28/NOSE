@@ -1,14 +1,16 @@
 create database nose;
 use nose;
 
-CREATE TABLE `nose`.`local` (
-  `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `nombre` VARCHAR(100) NOT NULL,
-  `direccion` VARCHAR(200) NULL DEFAULT NULL,
-  `RUC` VARCHAR(15) NOT NULL,
-  `clave` VARCHAR(100) NOT NULL,
-  `telefono` VARCHAR(15) NULL,
-  `external_id` VARCHAR(100) NOT NULL);
+CREATE TABLE `local` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `direccion` varchar(200) DEFAULT NULL,
+  `ruc` varchar(15) NOT NULL,
+  `clave` varchar(100) NOT NULL,
+  `telefono` varchar(15) DEFAULT NULL,
+  `external_id` varchar(100) NOT NULL,
+  `estado` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`));
 
 
 CREATE TABLE `cliente` (
@@ -19,11 +21,12 @@ CREATE TABLE `cliente` (
   `correo` varchar(50) DEFAULT NULL,
   `direccion` varchar(200) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
-  `external_id` varchar(45) NOT NULL,
+  `external_id` varchar(100) NOT NULL,
   `user` varchar(50) NOT NULL,
   `clave` varchar(50) NOT NULL,
-  `estado` char(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`));
+  `estado` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
   
     
     CREATE TABLE `menu` (

@@ -74,23 +74,23 @@ class ClienteController {
         if ($clienteObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $admin = Cliente::find($clienteObjeto->id_admin);
+                $client = Cliente::find($clienteObjeto->id_admin);
                 if (isset($data["user"]))
-                    $admin->user = $data["user"];
+                    $client->user = $data["user"];
                 if (isset($data["clave"]))
-                    $admin->clave = $data["clave"];
+                    $client->clave = $data["clave"];
                 if (isset($data["nombres"]))
-                    $admin->nombres = $data["nombres"];
+                    $client->nombres = $data["nombres"];
                 if (isset($data["apellidos"]))
-                    $admin->nombre = $data["apellidos"];
+                    $client->nombre = $data["apellidos"];
                 if (isset($data["correo"]))
-                    $admin->nombre = $data["correo"];
+                    $client->nombre = $data["correo"];
                 if (isset($data["direccion"]))
-                    $admin->nombre = $data["direccion"];
+                    $client->nombre = $data["direccion"];
                 if (isset($data["telefono"]))
-                    $admin->nombre = $data["telefono"];
+                    $client->nombre = $data["telefono"];
 
-                $admin->save();
+                $client->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             }else {
                 return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 400);
@@ -100,16 +100,15 @@ class ClienteController {
         }
     }
     
-    
     public function eliminar(Request $request,$external_id){
-        $adminObjeto=Administrador::where("external_id",$external_id)-> first();
-        if ($adminObjeto){
+        $clientObjeto=Administrador::where("external_id",$external_id)-> first();
+        if ($clientObjeto){
             if($request->isJson()){
                 $data=$request->json()->all();
-                $admin= Cliente::find($adminObjeto->id_admin);
+                $client= Cliente::find($clientObjeto->id_admin);
                if (isset($data["estado"]))
-                    $admin->estado = $data["estado"];
-                $admin->save();
+                    $client->estado = $data["estado"];
+                $client->save();
                 return response()-> json(["mensaje"=> "Operacion exitosa","siglas"=> "OE"],200);
                 
             }else{
