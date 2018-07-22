@@ -16,13 +16,11 @@ use Illuminate\Http\Request;
  *
  * @author AlejandroC
  */
-class LocalController {
+class LocalController extends Controller {
 
     private $external_id;
 
-    public function __construct() {
-        
-    }
+   
 
     public function registrar(Request $request) {
         if ($request->isJson()) {
