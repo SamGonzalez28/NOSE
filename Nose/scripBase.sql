@@ -1,90 +1,93 @@
-create database nose;
-use nose;
-
-CREATE TABLE `local` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `direccion` varchar(200) DEFAULT NULL,
-  `ruc` varchar(15) NOT NULL,
-  `clave` varchar(100) NOT NULL,
-  `telefono` varchar(15) DEFAULT NULL,
-  `external_id` varchar(100) NOT NULL,
-  `estado` tinyint(4) DEFAULT NULL,
-  PRIMARY KEY (`id`));
+DROP DATABASE IF EXISTS `nose`;
+CREATE DATABASE  IF NOT EXISTS `nose` ;
+USE `nose`;
 
 
+DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombres` varchar(100) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
-  `ci` varchar(10) NOT NULL,
-  `correo` varchar(50) DEFAULT NULL,
+  `ci` varchar(10) NOT NULL unique,
+  `correo` varchar(50) DEFAULT NULL unique,
   `direccion` varchar(200) DEFAULT NULL,
   `telefono` varchar(15) DEFAULT NULL,
   `external_id` varchar(100) NOT NULL,
-  `user` varchar(50) NOT NULL,
+  `user` varchar(50) NOT NULL unique,
   `clave` varchar(50) NOT NULL,
   `estado` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
-  
-    
-    CREATE TABLE `menu` (
+
+DROP TABLE IF EXISTS `local`;
+CREATE TABLE `local` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) NOT NULL,
+  `direccion` varchar(200) DEFAULT NULL,
+  `ruc` varchar(15) NOT NULL unique,
+  `clave` varchar(100) NOT NULL,
+  `telefono` varchar(15) DEFAULT NULL,
+  `external_id` varchar(100) NOT NULL,
+  `estado` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+DROP TABLE IF EXISTS `cartera`;
+CREATE TABLE `cartera` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_local` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `saldo` decimal(6,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_local` (`id_local`),
+  CONSTRAINT `cartera_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`),
+  CONSTRAINT `cartera_ibfk_2` FOREIGN KEY (`id_local`) REFERENCES `local` (`id`)
+);
+
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tipo` varchar(100) NOT NULL,
   `precio` decimal(6,2) NOT NULL,
   `descripcion` varchar(200) DEFAULT NULL,
   `external_id` varchar(100) NOT NULL,
   `id_local` int(11) NOT NULL,
-  `fecha_crea` timestamp NULL DEFAULT NULL,
-  `fecha_act` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp,
+  `updated_at` timestamp NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`id_local`) REFERENCES `local` (`id`)
-) ;
-    
-    CREATE TABLE `nose`.`registros` (
-  `id` INT NOT NULL,
-  `id_cliente` INT(11) NOT NULL,
-  `id_menu` INT(11) NULL,
-  `cantidad` SMALLINT(3) NULL,
-  `fecha` TIMESTAMP,
-  `valor` DECIMAL(6,2) NOT NULL,
-  `saldo_actual` DECIMAL(6,2) NULL,
-  `saldo_final` DECIMAL(6,2) NULL,
-  `external_id` VARCHAR(100) NOT NULL,
-  PRIMARY KEY (`id`),
+  KEY `id_local` (`id_local`),
+  CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`id_local`) REFERENCES `local` (`id`)
+);
 
-    FOREIGN KEY (`id_cliente`)
-    REFERENCES `nose`.`cliente` (`id`),
-   
- 
-    FOREIGN KEY (`id_menu`)
-    REFERENCES `nose`.`menu` (`id`)
-    );
-    
-    CREATE TABLE `nose`.`sesion` (
-  `id_cliente` INT(11) NULL,
-  `id_local` INT(11) NULL,
-  
-    FOREIGN KEY (`id_local`)
-    REFERENCES `nose`.`local` (`id`)
-    ,
-  
-    FOREIGN KEY (`id_cliente`)
-    REFERENCES `nose`.`cliente` (`id`)
-    );
-    
-    CREATE TABLE `cartera` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_local` int(11) NOT NULL,
+DROP TABLE IF EXISTS `registros`;
+CREATE TABLE `registros` (
+  `id` int(11) NOT NULL auto_increment,
   `id_cliente` int(11) NOT NULL,
-  `saldo` decimal(6,2) NOT NULL,
+  `id_menu` int(11) DEFAULT NULL,
+  `cantidad` smallint(3) DEFAULT NULL,
+  `fecha` timestamp NULL DEFAULT current_timestamp,
+  `valor` decimal(6,2) NOT NULL,
+  `external_id` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
- 
-  FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`),
-  FOREIGN KEY (`id_local`) REFERENCES `local` (`id`)
-) ;
+  KEY `id_cliente` (`id_cliente`),
+  KEY `id_menu` (`id_menu`),
+  CONSTRAINT `registros_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`),
+  CONSTRAINT `registros_ibfk_2` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id`)
+);
 
 
-
-
+DROP TABLE IF EXISTS asociar;
+CREATE TABLE `asociar` (
+	id int primary key auto_increment,
+    
+    `created_at` timestamp NULL DEFAULT current_timestamp,
+  `updated_at` timestamp NULL DEFAULT current_timestamp,
+  estado boolean default true,
+  `id_cliente` int(11) DEFAULT NULL,
+  `id_local` int(11) DEFAULT NULL,
+  KEY `id_local` (`id_local`),
+  KEY `id_cliente` (`id_cliente`),
+  CONSTRAINT `sesion_ibfk_1` FOREIGN KEY (`id_local`) REFERENCES `local` (`id`),
+  CONSTRAINT `sesion_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`)
+);
