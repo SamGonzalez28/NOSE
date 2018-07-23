@@ -10,7 +10,7 @@ class Menu extends Model{
     
     public $timestamps = true;//porque tengo 
     //lista blanca
-    protected $fillable =['tipo','precio','descripcion','id_local','external_id', 'fecha_cre', 'fecha_act'];
+    protected $fillable =['tipo','precio','descripcion','id_local','external_id', 'updated_at', 'created_at'];
     //lista negra
     protected $guarded = ['id'];
     

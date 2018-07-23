@@ -1,5 +1,16 @@
 <?php
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of Local
+ *
+ * @author sam
+ */
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -10,9 +21,9 @@ class Local extends Model{
     
     public $timestamps = false;//porque no tengo 
     //lista blanca
-    protected $fillable =['direccion','RUC','telefono','external_id'];
+    protected $fillable =['nombre','direccion','RUC','telefono','external_id','estado'];
     //lista negra
-    protected $guarded = ['id','nombre','clave'];
+    protected $guarded = ['id','clave'];
     
     //Relacion UNO a MUCHOS
     public function Menu(){
@@ -29,4 +40,3 @@ class Local extends Model{
         return $this->hasMany('App\Models\Cartera', 'id_local');
     }
 }
-

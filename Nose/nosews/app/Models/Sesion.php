@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sesion extends Model{
     
-    protected $table ='sesion';
+    protected $table ='asociar';
     
-    public $timestamps = false;//porque no tengo 
+    public $timestamps = true;
     //lista blanca
-    protected $fillable =['id_local','id_cliente'];
+    protected $fillable =['id_local','id_cliente','created_at',
+        'updated_at','estado'];
     //lista negra
     protected $guarded = ['id'];
     

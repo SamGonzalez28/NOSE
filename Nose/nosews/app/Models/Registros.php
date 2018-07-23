@@ -8,9 +8,9 @@ class Registros extends Model{
     
     protected $table ='registros';
     
-    public $timestamps = true;//porque no tengo 
+    public $timestamps = false;//porque no tengo 
     //lista blanca
-    protected $fillable =['id_cliente','id_menu','cantidad','fecha','valor','saldo_actual','saldo_final','external_id'];
+    protected $fillable =['id_cliente','id_menu','cantidad','fecha','valor','external_id'];
     //lista negra
     protected $guarded = ['id'];
     
