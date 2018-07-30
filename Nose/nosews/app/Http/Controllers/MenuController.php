@@ -44,9 +44,11 @@ class MenuController extends Controller {
                     $menu->local()->associate($local);
 
                     $menu->save();
+                    return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                }else{
+                    return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
 
-                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }

@@ -34,22 +34,24 @@ class RegistrosController extends Controller{
         if ($request->isJson()) {
             $data = $request->json()->all();
             try {
-                $cliente = \App\Models\Cliente::where("external_id", $data["clave"])->first();
-                $menu = \App\Models\Menu::where("external_id", $data["id"])->first();
-                if ($local) {
+                $cliente = \App\Models\Cliente::where("external_id", $data["cliente"])->first();
+                $menu = \App\Models\Menu::where("external_id", $data["menu"])->first();
+                if ($cliente == true && $menu == true) {
                     $regi = new Registros();
                     $regi->Cliente()->associate($cliente);
                     $regi->Menu()->associate($menu);
                     $regi->cantidad = $data["cantidad"];
                     $regi->valor = $data["valor"];
-                    $regi->saldo_actual = $data["saldo_actual"];
-                    $regi->saldo_final = $data["saldo_final"];
+                   
                     $regi->external_id = utilidades\UUID::v4();
 
                     $regi->save();
+                    return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                }else{
+                    return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
 
-                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }

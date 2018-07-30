@@ -35,12 +35,13 @@ class ClienteController extends Controller{
                 $client->correo = $data["correo"];
                 $client->direccion = $data["direccion"];
                 $client->telefono = $data["telefono"];
+                $client->estado = true;
                 $client->external_id = utilidades\UUID::v4();
 
                 $client->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } catch (Exception $ex) {
-                return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
+                return response()->json(["mensaje" => "Faltan Datos " +$ex, "siglas" => "FD"], 400);
             }
         } else {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);

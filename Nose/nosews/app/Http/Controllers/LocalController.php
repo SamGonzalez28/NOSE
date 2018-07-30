@@ -30,6 +30,7 @@ class LocalController extends Controller {
                 $local->nombre = $data["nombre"];
                 $local->direccion = $data["direccion"];
                 $local->ruc = $data["ruc"];
+                $local->estado = true;
                 $local->clave = $data["clave"];
                 $local->telefono = $data["telefono"];
                 $local->external_id = utilidades\UUID::v4();

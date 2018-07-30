@@ -28,20 +28,23 @@ class CarteraController extends Controller {
         return $data;
     }
 
-    public function guardar(Request $request) {
+    public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
             try {
-                $cliente = \App\Models\Cliente::where("clave", $data["clave"])->first();
-                $local = \App\Models\Local::where("external_id", $data["id_local"])->first();
+                $cliente = \App\Models\Cliente::where("external_id", $data["cliente"])->first();
+                $local = \App\Models\Local::where("external_id", $data["local"])->first();
                 if ($cliente == true && $local == true) {
                     $cartera = new Cartera();
                     $cartera->local()->associate($local);
                     $cartera->cliente()->associate($cliente);
-                    $cartera->saldo = $data["saldo"];
+                    $cartera-> saldo = $data["saldo"];
                     $cartera->save();
+                    return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                }else{
+                    return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
-                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }

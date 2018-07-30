@@ -8,28 +8,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use App\Models\Local;
+use App\Models\Sesion;
 use Illuminate\Http\Request;
 
 /**
- * Description of SecionController
+ * Description of SesionController
  *
- * @author alejo
+ * @author sam
  */
 class SesionController extends Controller {
 
-    public function guardar(Request $request) {
+    public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
             try {
-                $cliente = \App\Models\Cliente::where("clave", $data["clave"])->first();
-                $local = \App\Models\Local::where("external_id", $data["id_local"])->first();
+                $cliente = Cliente::where("external_id", $data["cliente"])->first();
+                $local = Local::where("external_id", $data["local"])->first();
                 if ($cliente == true && $local == true) {
-                    $sesion = new Cartera();
+                    $sesion = new Sesion();
+                    $sesion->estado = true;
                     $sesion->local()->associate($local);
                     $sesion->cliente()->associate($cliente);
+                    $sesion->save();
+                    
+                    return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                } else{
+                    return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
-                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }
