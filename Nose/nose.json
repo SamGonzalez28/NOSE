@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "bdfd8e49-dd20-4947-92d8-c8f165c71ede",
+		"name": "Nose",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "local",
+			"description": "",
+			"item": [
+				{
+					"name": "Nuevo Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Mama Lore\",\n\t\"direccion\": \"Catamayo\",\n\t\"ruc\": \"1102456783001\",\n\t\"telefono\": \"0997678345\",\n\t\"clave\":\"local\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/comer/cambiar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"comer",
+								"cambiar"
+							]
+						},
+						"description": "Ingresar Local"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Local",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Mama Lore\",\n\t\"direccion\": \"Catamayo\",\n\t\"ruc\": \"1102456783001\",\n\t\"telefono\": \"0997678345\",\n\t\"clave\":\"local\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/comer/cambiar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"comer",
+								"cambiar"
+							]
+						},
+						"description": "Ingresar Local"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cliente",
+			"description": "",
+			"item": [
+				{
+					"name": "Nuevo Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"user\":\"fer\",\n\t\"clave\":\"cliente\",\n\t\"nombres\": \"Luis Fernando\",\n\t\"apellidos\":\"Gonzalez Herrera\",\n\t\"ci\": \"1105663221\",\n\t\"telefono\":\"072573339\",\n\t\"correo\":\"lui7@g.com\",\n\t\"direccion\":\"Loja\"\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/cliente/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"cliente",
+								"nuevo"
+							]
+						},
+						"description": "Ingresar Cliente"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "menu",
+			"description": "",
+			"item": [
+				{
+					"name": "Nuevo Menu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"tipo\":\"DESAYUNO\",\n\t\"precio\":\"2.50\",\n\t\"descripcion\":\"Café con Tamal\",\n\t\"clave\":\"5862a1a8-5318-4f51-85d5-93eab307f322\"\n\t\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/comida/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"comida",
+								"nuevo"
+							]
+						},
+						"description": "Ingresar Menu"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cartera",
+			"description": "",
+			"item": [
+				{
+					"name": "Nueva Cartera",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"saldo\":\"250\",\n\t\"local\":\"111627e2-0bf6-40fd-bf99-25573274fbd0\",\n\t\"cliente\":\"3711ec42-ae24-480f-93fa-445e0d3af5b8\"\n\t\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/saldo/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"saldo",
+								"nuevo"
+							]
+						},
+						"description": "Ingresar Valor de Cartera"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "registros",
+			"description": "",
+			"item": [
+				{
+					"name": "Nuevo Registro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"menu\":\"8286b6b7-eb42-4b1d-8dd0-0f24b32a24e0\",\n\t\"cliente\":\"3711ec42-ae24-480f-93fa-445e0d3af5b8\",\n\t\"cantidad\":\"2\",\n\t\"valor\":\"5.00\"\n\t\n\t\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/compra/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"compra",
+								"nuevo"
+							]
+						},
+						"description": "Ingresar Detalle de Registro"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "asociar",
+			"description": "",
+			"item": [
+				{
+					"name": "Nueva Asociacion",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"local\":\"111627e2-0bf6-40fd-bf99-25573274fbd0\",\n\t\"cliente\":\"3711ec42-ae24-480f-93fa-445e0d3af5b8\"\n\t\n\t\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/login/nuevo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"login",
+								"nuevo"
+							]
+						},
+						"description": "Ingresar nueva asociacion cliente local"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
