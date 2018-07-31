@@ -78,16 +78,16 @@ class ClienteController extends Controller{
                     $client->user = $data["user"];
                 if (isset($data["clave"]))
                     $client->clave = $data["clave"];
-                if (isset($data["nombres"]))
-                    $client->nombres = $data["nombres"];
+                if (isset($data["nombre"]))
+                    $client->nombre = $data["nombre"];
                 if (isset($data["apellidos"]))
-                    $client->nombre = $data["apellidos"];
+                    $client->apellidos = $data["apellidos"];
                 if (isset($data["correo"]))
-                    $client->nombre = $data["correo"];
+                    $client->correo = $data["correo"];
                 if (isset($data["direccion"]))
-                    $client->nombre = $data["direccion"];
+                    $client->direccion = $data["direccion"];
                 if (isset($data["telefono"]))
-                    $client->nombre = $data["telefono"];
+                    $client->telefono = $data["telefono"];
 
                 $client->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);

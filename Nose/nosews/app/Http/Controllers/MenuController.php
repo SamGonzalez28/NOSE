@@ -64,11 +64,11 @@ class MenuController extends Controller {
                 $data = $request->json()->all();
                 $menu = Menu::find($menuObjeto->id_menu);
                 if (isset($data["tipo"]))
-                    $menu->nombre = $data["tipo"];
+                    $menu->tipo = $data["tipo"];
                 if (isset($data["precio"]))
-                    $menu->nombre = $data["precio"];
-                if (isset($data["describcion"]))
-                    $menu->nombre = $data["descripcion"];
+                    $menu->precio = $data["precio"];
+                if (isset($data["descripcion"]))
+                    $menu->descripcion = $data["descripcion"];
 
                 $menu->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);

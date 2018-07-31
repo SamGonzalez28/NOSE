@@ -74,13 +74,13 @@ class LocalController extends Controller {
                 if (isset($data["nombre"]))
                     $local->nombre = $data["nombre"];
                 if (isset($data["direccion"]))
-                    $local->nombre = $data["direccion"];
+                    $local->direccion = $data["direccion"];
                 if (isset($data["ruc"]))
-                    $local->nombre = $data["ruc"];
+                    $local->ruc = $data["ruc"];
                 if (isset($data["clave"]))
                     $local->clave = $data["clave"];
                 if (isset($data["telefono"]))
-                    $local->nombre = $data["telefono"];
+                    $local->telefono = $data["telefono"];
 
                 $local->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
