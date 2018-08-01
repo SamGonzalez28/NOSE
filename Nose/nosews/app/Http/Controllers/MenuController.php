@@ -62,7 +62,7 @@ class MenuController extends Controller {
         if ($menuObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $menu = Menu::find($menuObjeto->id_menu);
+                $menu = Menu::find($menuObjeto->id);
                 if (isset($data["tipo"]))
                     $menu->tipo = $data["tipo"];
                 if (isset($data["precio"]))

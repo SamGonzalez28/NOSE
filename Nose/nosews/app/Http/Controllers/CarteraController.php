@@ -38,6 +38,7 @@ class CarteraController extends Controller {
                     $cartera = new Cartera();
                     $cartera->local()->associate($local);
                     $cartera->cliente()->associate($cliente);
+                    $cartera->external_id = utilidades\UUID::v4();
                     $cartera-> saldo = $data["saldo"];
                     $cartera->save();
                     return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
@@ -50,6 +51,28 @@ class CarteraController extends Controller {
             }
         } else {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
+        }
+    }
+    
+    public function modificar(Request $request, $external_id) {//el request es solo para post, get y put
+
+        $carObj = Cartera::where("external_id", $external_id)->first(); //busca el registro por el primer external_id
+
+        if ($carObj) {//verifica que exista el administrador
+            if ($request->isJson()) {//verifica que este en formato json
+                $data = $request->json()->all(); //estrae todo del administrador
+                $cartera = Cartera::find($carObj->id); //para que busque el id con el external id
+
+                if (isset($data["saldo"]))
+                    $cartera->saldo = $data["saldo"];
+
+                $cartera->save();
+                return response()->json(["mensaje" => "Operacion Exitosa", "siglas" => "OE"], 200);
+            } else {
+                return response()->json(["mensaje" => "Formato Inadecuado", "siglas" => "FI"], 400);
+            }
+        } else {
+            return response()->json(["mensaje" => "No registros", "siglas" => "NR"], 203);
         }
     }
 

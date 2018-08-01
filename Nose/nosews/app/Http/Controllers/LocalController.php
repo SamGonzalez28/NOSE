@@ -70,7 +70,7 @@ class LocalController extends Controller {
         if ($localObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $local = Local::find($localObjeto->id_local);
+                $local = Local::find($localObjeto->id);
                 if (isset($data["nombre"]))
                     $local->nombre = $data["nombre"];
                 if (isset($data["direccion"]))
@@ -88,7 +88,7 @@ class LocalController extends Controller {
                 return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 400);
             }
         } else {
-            return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
+            return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NED"], 204);
         }
     }
 

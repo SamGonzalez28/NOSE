@@ -73,13 +73,13 @@ class ClienteController extends Controller{
         if ($clienteObjeto) {
             if ($request->isJson()) {
                 $data = $request->json()->all();
-                $client = Cliente::find($clienteObjeto->id_cliente);
+                $client = Cliente::find($clienteObjeto->id);
                 if (isset($data["user"]))
                     $client->user = $data["user"];
                 if (isset($data["clave"]))
                     $client->clave = $data["clave"];
-                if (isset($data["nombre"]))
-                    $client->nombre = $data["nombre"];
+                if (isset($data["nombres"]))
+                    $client->nombres = $data["nombres"];
                 if (isset($data["apellidos"]))
                     $client->apellidos = $data["apellidos"];
                 if (isset($data["correo"]))
@@ -88,6 +88,8 @@ class ClienteController extends Controller{
                     $client->direccion = $data["direccion"];
                 if (isset($data["telefono"]))
                     $client->telefono = $data["telefono"];
+                if (isset($data["ci"]))
+                    $client->ci = $data["ci"];
 
                 $client->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
