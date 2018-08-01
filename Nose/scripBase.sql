@@ -38,6 +38,7 @@ CREATE TABLE `cartera` (
   `id_local` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `saldo` decimal(6,2) NOT NULL,
+  external_id varchar(100),
   PRIMARY KEY (`id`),
   KEY `id_cliente` (`id_cliente`),
   KEY `id_local` (`id_local`),
