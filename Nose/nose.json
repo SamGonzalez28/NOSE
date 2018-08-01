@@ -26,10 +26,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nombre\": \"Mama Lore\",\n\t\"direccion\": \"Catamayo\",\n\t\"ruc\": \"1102456783001\",\n\t\"telefono\": \"0997678345\",\n\t\"clave\":\"local\"\n}"
+							"raw": "{\n  \"nombre\": \"Mama Lore\",\n  \"direccion\": \"Catamayo\",\n  \"ruc\": \"1102456783001\",\n  \"telefono\": \"0997678345\",\n  \"clave\":\"local\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/~sam/nosews/public/index.php/comer/cambiar",
+							"raw": "http://localhost/~sam/nosews/public/index.php/comer/nuevo",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -40,7 +40,7 @@
 								"public",
 								"index.php",
 								"comer",
-								"cambiar"
+								"nuevo"
 							]
 						},
 						"description": "Ingresar Local"
@@ -64,10 +64,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"nombre\": \"Mama Lore\",\n\t\"direccion\": \"Catamayo\",\n\t\"ruc\": \"1102456783001\",\n\t\"telefono\": \"0997678345\",\n\t\"clave\":\"local\"\n}"
+							"raw": "{\n\t\n\t\"direccion\": \"Loja\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost/~sam/nosews/public/index.php/comer/cambiar",
+							"raw": "http://localhost/~sam/nosews/public/index.php/comer/cambiar/5862a1a8-5318-4f51-85d5-93eab307f322",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -78,10 +78,48 @@
 								"public",
 								"index.php",
 								"comer",
-								"cambiar"
+								"cambiar",
+								"5862a1a8-5318-4f51-85d5-93eab307f322"
 							]
 						},
 						"description": "Ingresar Local"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Local",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Mama Lore\",\n  \"direccion\": \"Catamayo\",\n  \"ruc\": \"1102456783001\",\n  \"telefono\": \"0997678345\",\n  \"clave\":\"local\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/nosews/public/index.php/comer/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"nosews",
+								"public",
+								"index.php",
+								"comer",
+								"listar"
+							]
+						},
+						"description": "Lista Local"
 					},
 					"response": []
 				}
@@ -128,6 +166,45 @@
 						"description": "Ingresar Cliente"
 					},
 					"response": []
+				},
+				{
+					"name": "Modificar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ci\":\"1105399065\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/cliente/cambiar/3711ec42-ae24-480f-93fa-445e0d3af5b8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"cliente",
+								"cambiar",
+								"3711ec42-ae24-480f-93fa-445e0d3af5b8"
+							]
+						},
+						"description": "Modifica Cliente"
+					},
+					"response": []
 				}
 			]
 		},
@@ -172,6 +249,45 @@
 						"description": "Ingresar Menu"
 					},
 					"response": []
+				},
+				{
+					"name": "Modificar Menu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"tipo\":\"ALMUERZO\",\n\t\"precio\":\"3\",\n\t\"descripcion\":\"Arroz con Pollo\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/comida/cambiar/8286b6b7-eb42-4b1d-8dd0-0f24b32a24e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"comida",
+								"cambiar",
+								"8286b6b7-eb42-4b1d-8dd0-0f24b32a24e0"
+							]
+						},
+						"description": "Modifica Menu"
+					},
+					"response": []
 				}
 			]
 		},
@@ -214,6 +330,45 @@
 							]
 						},
 						"description": "Ingresar Valor de Cartera"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Cartera",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Api-Token",
+								"value": "ZjY5M2QxYjEtZTJhNi00YmM1LTlhZGMtZmYzMmE5YjQyY2U2LS1mZXI=",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"saldo\":\"500\"\n\t\n}"
+						},
+						"url": {
+							"raw": "http://localhost/~sam/nosews/public/index.php/saldo/cambiar/b76c8680-21d9-4585-871f-90b0a2c9df09",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"~sam",
+								"nosews",
+								"public",
+								"index.php",
+								"saldo",
+								"cambiar",
+								"b76c8680-21d9-4585-871f-90b0a2c9df09"
+							]
+						},
+						"description": "Modifica saldo de cartera"
 					},
 					"response": []
 				}
