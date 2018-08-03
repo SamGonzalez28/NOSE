@@ -54,6 +54,7 @@ CREATE TABLE `menu` (
   `descripcion` varchar(200) DEFAULT NULL,
   `external_id` varchar(100) NOT NULL,
   `id_local` int(11) NOT NULL,
+   estado boolean default true,
   `created_at` timestamp NULL DEFAULT current_timestamp,
   `updated_at` timestamp NULL DEFAULT current_timestamp,
   PRIMARY KEY (`id`),
@@ -81,10 +82,10 @@ CREATE TABLE `registros` (
 DROP TABLE IF EXISTS asociar;
 CREATE TABLE `asociar` (
 	id int primary key auto_increment,
-    
     `created_at` timestamp NULL DEFAULT current_timestamp,
   `updated_at` timestamp NULL DEFAULT current_timestamp,
   estado boolean default true,
+  `external_id` varchar(100) NOT NULL,
   `id_cliente` int(11) DEFAULT NULL,
   `id_local` int(11) DEFAULT NULL,
   KEY `id_local` (`id_local`),
