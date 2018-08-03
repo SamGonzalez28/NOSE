@@ -20,16 +20,6 @@ class MenuController extends Controller {
 
     private $external_id;
 
-    public function listar() {
-        $lista = \App\Models\Menu::where('id_local', $local)->get();
-        $data = array();
-        foreach ($lista as $item) {
-            $data[] = ["tipo" => $item->tipo, "precio" => $item->precio, "descripcion" => $item->descripcion];
-        }
-//return response()->json($data,200);
-        return $data;
-    }
-
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
@@ -96,5 +86,15 @@ class MenuController extends Controller {
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
+    
+     public function Listar() {
+        $lista = Menu::orderBy('tipo')->get();
+        $data = array();
 
+        foreach ($lista as $value) {
+
+            $data[] = ["<br>" . "tipo" => $value->tipo, "precio" => $value->precio, "descripcion" => $value->descripcion];
+        }
+        return $data;
+    }
 }

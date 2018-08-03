@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cartera;
+use App\Models\Cliente;
+use App\Models\Local;
 use Illuminate\Http\Request;
 
 /**
@@ -17,16 +19,6 @@ use Illuminate\Http\Request;
  * @author alejo
  */
 class CarteraController extends Controller {
-
-    public function listar() {
-        $cliente = \App\Models\Cliente::where("clave", $data["clave"])->first();
-        $lista = \App\Models\Cartera::where('id_cliente', $cliente)->get();
-        $data = array();
-        foreach ($lista as $item) {
-            $data[] = ["cliente" => $item->id_cliente, "saldo" => $item->saldo];
-        }
-        return $data;
-    }
 
     public function registrar(Request $request) {
         if ($request->isJson()) {
@@ -39,13 +31,12 @@ class CarteraController extends Controller {
                     $cartera->local()->associate($local);
                     $cartera->cliente()->associate($cliente);
                     $cartera->external_id = utilidades\UUID::v4();
-                    $cartera-> saldo = $data["saldo"];
+                    $cartera->saldo = $data["saldo"];
                     $cartera->save();
                     return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
-                }else{
+                } else {
                     return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
-                
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }
@@ -53,9 +44,8 @@ class CarteraController extends Controller {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
         }
     }
-    
-    public function modificar(Request $request, $external_id) {//el request es solo para post, get y put
 
+    public function modificar(Request $request, $external_id) {//el request es solo para post, get y put
         $carObj = Cartera::where("external_id", $external_id)->first(); //busca el registro por el primer external_id
 
         if ($carObj) {//verifica que exista el administrador
@@ -74,6 +64,25 @@ class CarteraController extends Controller {
         } else {
             return response()->json(["mensaje" => "No registros", "siglas" => "NR"], 203);
         }
+    }
+
+    public function Listar() {
+        $lista = Cartera::orderBy('id_local')->get();
+        $listaLocal = Local::orderBy('nombre')->get();
+        $listaCli = Cliente::orderBy('nombres')->get();
+        $data = array();
+
+        foreach ($listaLocal as $valueloc) {
+            $nombreloc = $valueloc->nombre;
+            foreach ($listaCli as $valuecli) {
+                $nombrecli = $valuecli->nombres;
+                foreach ($lista as $value) {
+                    $data[] = ["<br>" . "nombre del local" => $nombreloc, "nombre cliente" => $nombrecli,
+                        "saldo" => $value->saldo];
+                }
+            }
+        }
+        return $data;
     }
 
 }

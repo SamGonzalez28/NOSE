@@ -108,5 +108,17 @@ class LocalController extends Controller {
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
+    
+    public function Listar() {
+        $lista = Local::orderBy('nombre')->get();
+        $data = array();
+
+        foreach ($lista as $value) {
+
+            $data[] = ["<br>" . "nombre" => $value->nombre, "RUC" => $value->ruc, "direccion" => $value->direccion, 
+                "telefono" => $value->telefono];
+        }
+        return $data;
+    }
 
 }

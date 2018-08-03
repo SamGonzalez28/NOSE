@@ -19,16 +19,6 @@ use Illuminate\Http\Request;
 class RegistrosController extends Controller{
     private $external_id;
 
-    public function listar() {
-        $lista = \App\Models\Registros::where('id_local', $local)->get();
-        $data = array();
-        foreach ($lista as $item) {
-            $data[] = ["cliente" => $item->id_cliente, "menu" => $item->id_menu,
-                "cantidad" => $item->cantidad, "cantidad" => $item->cantidad, "fecha"=>$item->created_at->format("Y-m-d")
-                    ,"valor" => $item->valor,"saldo actual" => $item->saldo_actual, "saldo final" => $item->saldo_final];
-        }
-        return $data;
-    }
 
     public function registrar(Request $request) {
         if ($request->isJson()) {

@@ -120,4 +120,17 @@ class ClienteController extends Controller{
             return response()-> json(["mensaje"=> "No se encontro ningun dato","siglas"=> "NDE"],204);
         }
     }
+    
+    public function Listar() {
+        $lista = Cliente::orderBy('nombres')->get();
+        $data = array();
+
+        foreach ($lista as $value) {
+
+            $data[] = ["<br>" . "nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci, 
+                "correo" => $value->correo, "direccion" => $value->direccion, "telefono" => $value->telefono,
+                "user" => $value->user];
+        }
+        return $data;
+    }
 }
