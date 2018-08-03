@@ -105,10 +105,10 @@ class ClienteController extends Controller{
         $clientObjeto=Cliente::where("external_id",$external_id)-> first();
         if ($clientObjeto){
             if($request->isJson()){
-                $data=$request->json()->all();
-                $client= Cliente::find($clientObjeto->id_cliente);
-               if (isset($data["estado"]))
-                    $client->estado = $data["estado"];
+                
+                $client= Cliente::find($clientObjeto->id);
+               
+                    $client->estado = false;
                 $client->save();
                 return response()-> json(["mensaje"=> "Operacion exitosa","siglas"=> "OE"],200);
                 

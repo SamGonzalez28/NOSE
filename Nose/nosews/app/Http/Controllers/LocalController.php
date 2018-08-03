@@ -20,8 +20,6 @@ class LocalController extends Controller {
 
     private $external_id;
 
-   
-
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
@@ -96,13 +94,14 @@ class LocalController extends Controller {
         $localObjeto = Local::where("external_id", $external_id)->first();
         if ($localObjeto) {
             if ($request->isJson()) {
-                $data = $request->json()->all();
-                $local = Local::find($localObjeto->id_local);
-                if (isset($data["estado"]))
-                    $local->estado = $data["estado"];
-                $local->save();
-                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
-            }else {
+               
+                $local = Local::find($localObjeto->id);
+                
+                    $local->estado = false;
+                    $local->save();
+                    return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+                
+            } else {
                 return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 400);
             }
         } else {

@@ -24,7 +24,7 @@ class MenuController extends Controller {
         $lista = \App\Models\Menu::where('id_local', $local)->get();
         $data = array();
         foreach ($lista as $item) {
-            $data[] = ["tipo" => $item->tipo, "precio" => $item->precio,"descripcion" => $item->descripcion];
+            $data[] = ["tipo" => $item->tipo, "precio" => $item->precio, "descripcion" => $item->descripcion];
         }
 //return response()->json($data,200);
         return $data;
@@ -45,10 +45,9 @@ class MenuController extends Controller {
 
                     $menu->save();
                     return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
-                }else{
+                } else {
                     return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
-
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }
@@ -84,13 +83,13 @@ class MenuController extends Controller {
         $menuObjeto = Menu::where("external_id", $external_id)->first();
         if ($menuObjeto) {
             if ($request->isJson()) {
-                $data = $request->json()->all();
-                $menu = Menu::find($menuObjeto->id_menu);
-                if (isset($data["estado"]))
-                    $menu->estado = $data["estado"];
+
+                $menu = Menu::find($menuObjeto->id);
+
+                $menu->estado = false;
                 $menu->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
-            }else {
+            } else {
                 return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 400);
             }
         } else {
