@@ -16,9 +16,9 @@ use Illuminate\Http\Request;
  *
  * @author alejo
  */
-class RegistrosController extends Controller{
-    private $external_id;
+class RegistrosController extends Controller {
 
+    private $external_id;
 
     public function registrar(Request $request) {
         if ($request->isJson()) {
@@ -32,16 +32,14 @@ class RegistrosController extends Controller{
                     $regi->Menu()->associate($menu);
                     $regi->cantidad = $data["cantidad"];
                     $regi->valor = $data["valor"];
-                   
+
                     $regi->external_id = utilidades\UUID::v4();
 
                     $regi->save();
                     return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
-                }else{
+                } else {
                     return response()->json(["mensaje" => "Referencia Incorrecta", "siglas" => "RI"], 400);
                 }
-
-                
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
             }
@@ -49,4 +47,28 @@ class RegistrosController extends Controller{
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
         }
     }
+
+    public function listarporCliente($external_id) {
+        $cliente = \App\Models\Cliente::where("external_id", $external_id)->first();
+
+
+        if ($cliente) {
+            $lista = Registros:: where('id_cliente', $cliente->id)
+                    ->join('menu','menu.id', '=', 'registros.id_menu')
+                    ->orderBy('fecha', 'des')
+                    ->get();
+
+
+            foreach ($lista as $item) {
+                $data[] = ["cliente" => $cliente->nombres,
+                    "cantidad" => $item->cantidad,
+                    "valor" => $item->valor,
+                    "descripcion" => $item->descripcion];
+            }
+            return response()->json($data, 200);
+        } else {
+            return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
+        }
+    }
+
 }
