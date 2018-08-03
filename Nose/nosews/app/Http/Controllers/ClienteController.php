@@ -127,7 +127,7 @@ class ClienteController extends Controller{
 
         foreach ($lista as $value) {
 
-            $data[] = ["<br>" . "nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci, 
+            $data[] = ["nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci, 
                 "correo" => $value->correo, "direccion" => $value->direccion, "telefono" => $value->telefono,
                 "user" => $value->user];
         }

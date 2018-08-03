@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Local;
 use Illuminate\Http\Request;
 
 /**
@@ -24,7 +25,7 @@ class MenuController extends Controller {
         if ($request->isJson()) {
             $data = $request->json()->all();
             try {
-                $local = \App\Models\Local::where("external_id", $data["clave"])->first();
+                $local = \App\Models\Local::where("external_id", $data["local"])->first();
                 if ($local) {
                     $menu = new Menu();
                     $menu->tipo = $data["tipo"];
@@ -86,15 +87,32 @@ class MenuController extends Controller {
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
-    
-     public function Listar() {
+
+    public function listarporLocal($external_id) {
+        $local = Local::where("external_id", $external_id)->first();
+        if ($local) {
+            $lista = Menu:: where('id_local', $local->id)->orderBy('tipo')->get();
+            foreach ($lista as $item) {
+                $data[] = ["tipo" => $item->tipo, "descripcion" => $item->descripcion,
+                    "precio" => $item->precio, "local" => $local->nombre];
+            }
+            return response()->json($data, 200);
+        } else {
+            return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
+        }
+    }
+
+    public function Listar() {
+        $value = Local::orderBy('nombre')->first();
         $lista = Menu::orderBy('tipo')->get();
         $data = array();
 
-        foreach ($lista as $value) {
-
-            $data[] = ["<br>" . "tipo" => $value->tipo, "precio" => $value->precio, "descripcion" => $value->descripcion];
+        foreach ($lista as $item) {
+            $value = Local::where('id',$item->id_local)->first();
+            $data[] = ["tipo" => $item->tipo, "descripcion" => $item->descripcion,
+                "precio" => $item->precio, "nombre" => $value->nombre];
         }
         return $data;
     }
+
 }

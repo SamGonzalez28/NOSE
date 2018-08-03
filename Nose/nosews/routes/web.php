@@ -32,6 +32,7 @@ $router->get('cliente/listar', 'ClienteController@listar');
 $router->post('comida/nuevo', 'MenuController@registrar');
 $router->post('comida/cambiar/{external_id}', 'MenuController@modificar');
 $router->post('comida/borrar/{external_id}', 'MenuController@eliminar');
+$router->post('comida/listar/{external_id}', 'MenuController@listarporLocal');
 $router->get('comida/listar', 'MenuController@listar');
 
 $router->post('saldo/nuevo', 'CarteraController@registrar');
@@ -39,6 +40,7 @@ $router->post('saldo/cambiar/{external_id}', 'CarteraController@modificar');
 $router->get('saldo/listar', 'CarteraController@listar');
 
 $router->post('compra/nuevo', 'RegistrosController@registrar');
+$router->post('compra/listar/{external_id}', 'RegistrosController@listarporCliente');
 
 $router->post('login/nuevo', 'SesionController@registrar');
 $router->post('login/borrar/{external_id}', 'SesionController@eliminar');

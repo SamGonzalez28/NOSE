@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Registros;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 /**
@@ -53,17 +54,12 @@ class RegistrosController extends Controller {
 
 
         if ($cliente) {
-            $lista = Registros:: where('id_cliente', $cliente->id)
-                    ->join('menu','menu.id', '=', 'registros.id_menu')
-                    ->orderBy('fecha', 'des')
-                    ->get();
-
-
+                $lista = Registros:: where('id_cliente', $cliente->id) 
+                        ->join('menu','menu.id', '=', 'registros.id_menu')
+                    ->orderBy('fecha', 'des')->get();
             foreach ($lista as $item) {
-                $data[] = ["cliente" => $cliente->nombres,
-                    "cantidad" => $item->cantidad,
-                    "valor" => $item->valor,
-                    "descripcion" => $item->descripcion];
+                $data[] = ["cliente" => $cliente->nombres, "cantidad" => $item->cantidad, "valor" => $item->valor,
+                           "descripcion" => $item->descripcion];
             }
             return response()->json($data, 200);
         } else {

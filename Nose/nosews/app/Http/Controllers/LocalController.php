@@ -115,7 +115,7 @@ class LocalController extends Controller {
 
         foreach ($lista as $value) {
 
-            $data[] = ["<br>" . "nombre" => $value->nombre, "RUC" => $value->ruc, "direccion" => $value->direccion, 
+            $data[] = ["nombre" => $value->nombre, "RUC" => $value->ruc, "direccion" => $value->direccion, 
                 "telefono" => $value->telefono];
         }
         return $data;
