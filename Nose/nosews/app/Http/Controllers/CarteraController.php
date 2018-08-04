@@ -66,11 +66,15 @@ class CarteraController extends Controller {
         }
     }
 
-    public function Listar($external_id) {
+    public function Listar() {
         $lista = Cartera::orderBy('id_local')->get();
-        $listaLocal = Local::where('nombre')->get();
         $data = array();
-            
+
+        foreach ($lista as $value) {
+            $local = Local::where('id',$value->id_local)->first();
+            $cliente = Cliente::where('id',$value->id_cliente)->first();
+            $data[] = ["Cliente" => $cliente->nombres, "local" => $local->nombre, "saldo" => $value->saldo];
+        }
         return $data;
     }
 

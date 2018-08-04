@@ -51,20 +51,28 @@ class RegistrosController extends Controller {
 
     public function listarporCliente($external_id) {
         $cliente = \App\Models\Cliente::where("external_id", $external_id)->first();
-
-
         if ($cliente) {
-                $lista = Registros:: where('id_cliente', $cliente->id) 
-                        ->join('menu','menu.id', '=', 'registros.id_menu')
-                    ->orderBy('fecha', 'des')->get();
+            $lista = Registros:: where('id_cliente', $cliente->id)->join('menu', 'menu.id', '=', 'registros.id_menu')->orderBy('fecha', 'des')->get();
             foreach ($lista as $item) {
-                $data[] = ["cliente" => $cliente->nombres, "cantidad" => $item->cantidad, "valor" => $item->valor,
-                           "descripcion" => $item->descripcion];
+                $data[] = ["cliente" => $cliente->nombres, "cantidad" => $item->cantidad, "valor" => $item->valor, "descripcion" => $item->descripcion];
             }
             return response()->json($data, 200);
         } else {
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
+    }
+
+    public function listar() {
+        $lista = Registros::orderBy('id_cliente')->get();
+        $data = array();
+
+        foreach ($lista as $value) {
+            $menu = \App\Models\Menu::where('id', $value->id_menu)->first();
+            $cliente = Cliente::where('id', $value->id_cliente)->first();
+            $data[] = ["Cliente" => $cliente->nombres, "menu" => $menu->tipo, "descripcion" => $menu->descripcion,
+                "cantidad" => $value->cantidad, "fecha" => $value->fecha, "valor" => $value->valor];
+        }
+        return $data;
     }
 
 }

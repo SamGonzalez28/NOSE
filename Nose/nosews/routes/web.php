@@ -41,6 +41,7 @@ $router->get('saldo/listar', 'CarteraController@listar');
 
 $router->post('compra/nuevo', 'RegistrosController@registrar');
 $router->post('compra/listar/{external_id}', 'RegistrosController@listarporCliente');
+$router->get('compra/listar', 'RegistrosController@listar');
 
 $router->post('login/nuevo', 'SesionController@registrar');
 $router->post('login/borrar/{external_id}', 'SesionController@eliminar');
