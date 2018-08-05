@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#ff8c00</color>
+    <color name="colorPrimary">#ff8c00</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="blanco">#ffffff</color>
+    <color name="fusionRed">#fc5c65</color>
+    <color name="flirtatious">#fed330</color>
+    <color name="reptileGreen">#26de81</color>
+    <color name="MaximumBlueGreen">#2bcbba</color>
+    <color name="desire">#eb3b5a</color>
+    <color name="beniukonBronze">#fa8231</color>
+    <color name="nycTaxi">#f7b731</color>
+    <color name="algalFuel">#20bf6b</color>
+    <color name="turquioiseTopaz">#0fb9b1</color>
+    <color name="highBlue">#45aaf2</color>
+    <color name="c64Ntsc">#4b7bec</color>
+    <color name="lighterPurple">#a55eea</color>
+    <color name="twinkleBlue">#d1d8e0</color>
+    <color name="blueGrey">#778ca3</color>
+    <color name="boyZone">#2d98da</color>
+    <color name="royalBlue">#3867d6</color>
+    <color name="gloomyPurple">#8854d0</color>
+    <color name="innuendo">#a5b1c2</color>
+    <color name="blueHorizon">#4b6584</color>
 </resources>
