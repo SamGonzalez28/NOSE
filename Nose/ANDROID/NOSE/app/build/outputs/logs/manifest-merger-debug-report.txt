@@ -1,0 +1,103 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\1157b48884c394867468d3c0f2b95ba1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\52b5941f80f25b7d436dbe19e9a8f237\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\4937c02b8fdd51cf4244d3dad7479838\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\ecd193fa8a6a30e9d2b14466aa13b573\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\403cd51e2a8757cbfb0adb09fee5a16d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\75918b7d0bf08551dfedc108c3c9c925\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\44df65f0d78adecc004c3ca09eaf33a5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\1cb59de191d616fd4809b20cc94c5184\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\4b8b533789c2b819e1bd60854c45694e\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2597ec5b41c7d754dae885f541414673\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f9de011671299566c29afb5c6c596962\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\1dd0cb8134a8c2c736c98bd58c7ae514\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:3:5-27
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:1-21:12
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:5:5-19:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\52b5941f80f25b7d436dbe19e9a8f237\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\52b5941f80f25b7d436dbe19e9a8f237\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:11:9-59
+activity#com.sam.nose.InicioActivity
+ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:12:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\1157b48884c394867468d3c0f2b95ba1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\1157b48884c394867468d3c0f2b95ba1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\52b5941f80f25b7d436dbe19e9a8f237\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\52b5941f80f25b7d436dbe19e9a8f237\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\4937c02b8fdd51cf4244d3dad7479838\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\4937c02b8fdd51cf4244d3dad7479838\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\ecd193fa8a6a30e9d2b14466aa13b573\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\ecd193fa8a6a30e9d2b14466aa13b573\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\403cd51e2a8757cbfb0adb09fee5a16d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\403cd51e2a8757cbfb0adb09fee5a16d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\75918b7d0bf08551dfedc108c3c9c925\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\75918b7d0bf08551dfedc108c3c9c925\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\44df65f0d78adecc004c3ca09eaf33a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\44df65f0d78adecc004c3ca09eaf33a5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\1cb59de191d616fd4809b20cc94c5184\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\1cb59de191d616fd4809b20cc94c5184\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\4b8b533789c2b819e1bd60854c45694e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\4b8b533789c2b819e1bd60854c45694e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2597ec5b41c7d754dae885f541414673\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\2597ec5b41c7d754dae885f541414673\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f9de011671299566c29afb5c6c596962\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\f9de011671299566c29afb5c6c596962\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\1dd0cb8134a8c2c736c98bd58c7ae514\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Windows\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\1dd0cb8134a8c2c736c98bd58c7ae514\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Windows\AndroidStudioProjects\NOSE\app\src\main\AndroidManifest.xml
