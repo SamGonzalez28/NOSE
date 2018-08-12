@@ -18,6 +18,7 @@ $router->get('/', function () use ($router) {
 $router->get('test/esto/es/una/pueba','TestController@test');
 
 $router->post('comer/entrar', 'LocalController@inicioSesion');//esta en veremos hasta autenticar el token
+$router->post('cliente/entrar', 'ClienteController@inicioSesion');//esta en veremos hasta autenticar el token
 
 $router->post('comer/nuevo', 'LocalController@registrar');
 $router->post('comer/cambiar/{external_id}', 'LocalController@modificar');

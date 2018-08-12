@@ -19,6 +19,12 @@ use Illuminate\Http\Request;
  * @author alejo
  */
 class CarteraController extends Controller {
+    
+    function __construct() {
+        $this->middleware('auth', ['only' => [
+                'listar','modificar'
+        ]]);
+    }
 
     public function registrar(Request $request) {
         if ($request->isJson()) {

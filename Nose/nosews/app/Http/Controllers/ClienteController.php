@@ -16,11 +16,15 @@ use Illuminate\Http\Request;
  *
  * @author AlejandroC
  */
-class ClienteController extends Controller{
+class ClienteController extends Controller {
 
     private $external_id;
 
-   
+    function __construct() {
+        $this->middleware('auth', ['only' => [
+                'modificar','listar'
+        ]]);
+    }
 
     public function registrar(Request $request) {
         if ($request->isJson()) {
@@ -41,7 +45,7 @@ class ClienteController extends Controller{
                 $client->save();
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } catch (Exception $ex) {
-                return response()->json(["mensaje" => "Faltan Datos " +$ex, "siglas" => "FD"], 400);
+                return response()->json(["mensaje" => "Faltan Datos " + $ex, "siglas" => "FD"], 400);
             }
         } else {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
@@ -52,12 +56,14 @@ class ClienteController extends Controller{
 
         try {
             $data = $request->json()->all();
-            $cliente = Cliente::where("user", $data["user"])->where("clave", $data["clave"])->where("estado", true)->first();
+            $cliente = Cliente::where("user", $data["user"])
+                            ->where("clave", $data["clave"])
+                            ->where("estado", true)->first();
 
             if ($cliente) {
                 return response()->json(["user" => $cliente->user,
                             "id" => $cliente->external_id,
-                            "nombre" => $cliente->nombre,
+                            "nombre" => $cliente->nombres,
                             "token" => base64_encode($cliente->external_id . '--' . $cliente->user),
                             "mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } else {
@@ -100,37 +106,36 @@ class ClienteController extends Controller{
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
-    
-    public function eliminar(Request $request,$external_id){
-        $clientObjeto=Cliente::where("external_id",$external_id)-> first();
-        if ($clientObjeto){
-            if($request->isJson()){
-                
-                $client= Cliente::find($clientObjeto->id);
-               
-                    $client->estado = false;
+
+    public function eliminar(Request $request, $external_id) {
+        $clientObjeto = Cliente::where("external_id", $external_id)->first();
+        if ($clientObjeto) {
+            if ($request->isJson()) {
+
+                $client = Cliente::find($clientObjeto->id);
+
+                $client->estado = false;
                 $client->save();
-                return response()-> json(["mensaje"=> "Operacion exitosa","siglas"=> "OE"],200);
-                
-            }else{
-                return response()-> json(["mensaje"=> "La data no tiene el formato deseado","siglas"=> "DNF"],400);
+                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
+            } else {
+                return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 400);
             }
-            
-        }else{
-            return response()-> json(["mensaje"=> "No se encontro ningun dato","siglas"=> "NDE"],204);
+        } else {
+            return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
-    
+
     public function Listar() {
         $lista = Cliente::orderBy('nombres')->get();
         $data = array();
 
         foreach ($lista as $value) {
 
-            $data[] = ["nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci, 
+            $data[] = ["nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci,
                 "correo" => $value->correo, "direccion" => $value->direccion, "telefono" => $value->telefono,
                 "user" => $value->user];
         }
         return $data;
     }
+
 }

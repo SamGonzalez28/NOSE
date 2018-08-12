@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/CarteraController.php</file>
-            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/SesionController.php</file>
-            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/MenuController.php</file>
-            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/LocalController.php</file>
-            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/RegistrosController.php</file>
-            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/ClienteController.php</file>
+            <file>file:/C:/xampp/htdocs/nosews/app/Providers/AuthServiceProvider.php</file>
             <file>file:/C:/xampp/htdocs/nosews/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/nosews/app/Http/Controllers/ClienteController.php</file>
         </group>
     </open-files>
 </project-private>
