@@ -15,11 +15,19 @@ use Illuminate\Http\Request;
 /**
  * Description of MenuController
  *
- * @author alejo
+ * @author AlejandroC
  */
 class MenuController extends Controller {
 
     private $external_id;
+
+    function __construct() {
+        $this->middleware('auth', ['only' =>
+            [
+                'modificar', 'registrar', 'eliminar', 'listarporLocal'
+            ]
+        ]);
+    }
 
     public function registrar(Request $request) {
         if ($request->isJson()) {
@@ -108,7 +116,7 @@ class MenuController extends Controller {
         $data = array();
 
         foreach ($lista as $item) {
-            $value = Local::where('id',$item->id_local)->first();
+            $value = Local::where('id', $item->id_local)->first();
             $data[] = ["tipo" => $item->tipo, "descripcion" => $item->descripcion,
                 "precio" => $item->precio, "nombre" => $value->nombre];
         }

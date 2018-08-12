@@ -21,6 +21,12 @@ class RegistrosController extends Controller {
 
     private $external_id;
 
+    function __construct() {
+        $this->middleware('auth', ['only' => [
+                'listarporcliente'
+        ]]);
+    }
+    
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();

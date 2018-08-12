@@ -20,6 +20,14 @@ class LocalController extends Controller {
 
     private $external_id;
 
+    function __construct() {
+        $this->middleware('auth', ['only' =>
+            [
+                'modificar', 'eliminar'
+            ]
+        ]);
+    }
+
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
@@ -50,9 +58,9 @@ class LocalController extends Controller {
             $local = Local::where("nombre", $data["nombre"])->where("clave", $data["clave"])->where("estado", true)->first();
 
             if ($local) {
-                return response()->json(["nombre" => $local->nombre,
-                            "id" => $local->external_id,
+                return response()->json([
                             "nombre" => $local->nombre,
+                            "id" => $local->external_id,
                             "token" => base64_encode($local->external_id . '--' . $local->nombre),
                             "mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } else {
@@ -94,13 +102,17 @@ class LocalController extends Controller {
         $localObjeto = Local::where("external_id", $external_id)->first();
         if ($localObjeto) {
             if ($request->isJson()) {
-               
+
                 $local = Local::find($localObjeto->id);
-                
-                    $local->estado = false;
-                    $local->save();
-                    return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
-                
+
+                $local->estado = false;
+                $local->save();
+                MenuController::eliminar($external_id);
+                ClienteController::eliminar($external_id);
+                CarteraController::eliminar($external_id);
+                SesionController::eliminar($external_id);
+
+                return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } else {
                 return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 400);
             }
@@ -108,14 +120,14 @@ class LocalController extends Controller {
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
-    
+
     public function Listar() {
         $lista = Local::orderBy('nombre')->get();
         $data = array();
 
         foreach ($lista as $value) {
 
-            $data[] = ["nombre" => $value->nombre, "RUC" => $value->ruc, "direccion" => $value->direccion, 
+            $data[] = ["nombre" => $value->nombre, "RUC" => $value->ruc, "direccion" => $value->direccion,
                 "telefono" => $value->telefono];
         }
         return $data;
