@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blanco"
     android:theme="@style/AppTheme"
     android:orientation="vertical"
-    tools:context="com.sam.nose.Cliente.reg_cli">
+    tools:context=".Cliente.RegistrarCliente">
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -23,17 +22,17 @@
         android:layout_gravity="center"
         android:text="Registro de Cliente"
         android:textSize="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margen_15"
         android:textColor="@color/colorPrimary"
-        android:textStyle="italic"/>
+        android:textStyle="bold|italic"/>
 
     <LinearLayout
-        android:id="@+id/reg_cli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/margin_reg_cli"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/margen_30"
+        android:layout_marginTop="@dimen/margen_15"
+        android:background="#f5f6fa">
 
 
         <EditText
@@ -41,10 +40,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="Nombres"
+            android:hint="@string/nombresCli"
             android:inputType="text"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
 
         <EditText
@@ -52,21 +52,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="Apellidos"
-            android:inputType="textPersonName"
+            android:hint="@string/apellidosCli"
+            android:inputType="text"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
         <EditText
             android:id="@+id/txt_cedulaCli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="Cedula"
+            android:hint="@string/ciCli"
             android:inputType="number"
             android:maxLength="10"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
 
         <EditText
@@ -74,10 +76,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="email"
+            android:hint="@string/emailCli"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
 
         <EditText
@@ -85,54 +88,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="Direccion"
+            android:hint="@string/direccion"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
+
+        <EditText
+            android:id="@+id/txt_tlfCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:hint="@string/telefono"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:singleLine="true" />
-
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
         <EditText
             android:id="@+id/txt_userCli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="Telefono"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:singleLine="true" />
-
-        <EditText
-            android:id="@+id/txt_tlf"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:hint="User"
+            android:hint="@string/userCli"
             android:inputType="text"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
         <EditText
             android:id="@+id/txt_passwordCli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:hint="Password"
+            android:hint="@string/password"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:layout_marginHorizontal="@dimen/margen_30"/>
 
 
         <Button
-            android:id="@+id/btn_regCli"
+            android:id="@+id/btn_regCliente"
             style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/margen_40"
             android:background="@color/beniukonBronze"
             android:text="Registrar"
+            android:layout_margin="@dimen/margen_30"
             android:textStyle="bold" />
 
     </LinearLayout>

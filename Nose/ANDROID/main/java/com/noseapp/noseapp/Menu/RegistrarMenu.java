@@ -1,15 +1,14 @@
-package com.sam.nose.Local;
+package com.noseapp.noseapp.Menu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import com.noseapp.noseapp.R;
 
-import com.sam.nose.R;
-
-public class MenusActivity extends AppCompatActivity {
+public class RegistrarMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menus);
+        setContentView(R.layout.activity_registrar_menu);
     }
 }
