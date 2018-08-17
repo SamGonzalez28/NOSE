@@ -111,7 +111,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'Brayan Alejandro','Cobos Cabrera','1105399065','balec@g.com','Catamayo','0984986586','95076343-5e19-49bb-9e8f-484017192ffe','ale','cliente',1),(2,'Lady ','Jimenez ','1102365478','ydal@g.com','Gonzanama','0987654321','b42a33c9-0734-45d8-84c2-347d1fd5e9df','ydal','cliente',1);
+INSERT INTO `cliente` VALUES (1,'Brayan Alejandro','Cobos Cabrera','1105399065','balec@g.com','Catamayo','0984986586','95076343-5e19-49bb-9e8f-484017192ffe','ale','cliente',1);
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
