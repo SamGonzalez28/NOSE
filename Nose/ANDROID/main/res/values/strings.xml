@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Nose</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="password">Ingrese su contraseña</string>
+    <string name="direccion">Ingrese su domicilio </string>
+    <string name="telefono">Ingrese su telefono</string>
+    <string name="RegCli">Registro de Cliente</string>
+    <string name="RegLocal">Registro de Local</string>
+    <string name="RegMenu">Registro de Menu</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="action_sign_in_short">Entrar</string>
+    <string name="error_invalid_email">Email invalido</string>
+    <string name="error_invalid_password">La contraseña es muy corta</string>
+    <string name="error_incorrect_password">Contraseña Incorrecta</string>
+    <string name="error_field_required">Campos Requeridos</string>
+    <string name="registrar">¿No tienes cuenta? Registrate</string>
+    <string name="usuario">Usuario</string>
+    <!-- Strings de registrar -->
+    <string name="nombresCli">Ingrese sus nombres</string>
+    <string name="apellidosCli">Ingrese sus apellidos</string>
+    <string name="ciCli">Numero de Cédula</string>
+    <string name="emailCli">Ingrese su correo electronico</string>
+    <string name="userCli">Ingrese su nombre de usuario</string>
+    <!-- Strings de local -->
+    <string name="nombreLocal">Ingrese el nombre de su local</string>
+    <string name="ruc">Ingrese sus apellidos</string>
+    <!-- Strings de menu -->
+    <string name="tipoMenu">Escoja el Tipo de Comida</string>
+    <string name="precioMenu">Ingrese el precio</string>
+    <string name="descripcionMenu">Descripción del plato</string>
+    <string name="desayuno">Desayuno</string>
+    <string name="Almuerzo">Almuerzo</string>
+    <string name="Cena">Cena</string>
+    <string name="Lunch">Lunch</string>
+    <string name="EntreDia">Entre dia</string>
+</resources>

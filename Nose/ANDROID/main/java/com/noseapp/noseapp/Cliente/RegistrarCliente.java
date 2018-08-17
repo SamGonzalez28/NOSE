@@ -1,14 +1,14 @@
-package com.sam.nose.Cliente;
+package com.noseapp.noseapp.Cliente;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.sam.nose.R;
+import com.noseapp.noseapp.R;
 
-public class menu_cli extends AppCompatActivity {
+public class RegistrarCliente extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_cli);
+        setContentView(R.layout.activity_registrar_cliente);
     }
 }
