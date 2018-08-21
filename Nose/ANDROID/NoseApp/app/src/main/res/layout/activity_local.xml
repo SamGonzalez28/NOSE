@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/AppTheme"
+    tools:context=".Local.LocalActivity"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btn_menus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/menu1"
+        android:background="@color/blanco"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_clientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:src="@drawable/equipo"
+        android:background="@color/blanco" />
+
+    <ImageButton
+        android:id="@+id/btn_registros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/factura"
+        android:background="@color/blanco"/>
+
+    <ImageButton
+        android:id="@+id/btn_qr"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/qr"
+        android:background="@color/blanco"
+        />
+
+</LinearLayout>

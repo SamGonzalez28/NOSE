@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "998929121411",
+    "firebase_url": "https://noseapp-622b1.firebaseio.com",
+    "project_id": "noseapp-622b1",
+    "storage_bucket": "noseapp-622b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998929121411:android:5c5ae99188923a51",
+        "android_client_info": {
+          "package_name": "com.noseapp.noseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998929121411-bsk56q0tqugp2k5fkpk35q1614iq8b43.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noseapp.noseapp",
+            "certificate_hash": "3ce8be67ef296c70c325933b38fd2fa217ebb4f2"
+          }
+        },
+        {
+          "client_id": "998929121411-2slpejpcm29v3iss5c9btdsa9gcgg6b9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnLx3oVAP3bfbCJHmJ5ZFcZUc-joPBPz4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998929121411-2slpejpcm29v3iss5c9btdsa9gcgg6b9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

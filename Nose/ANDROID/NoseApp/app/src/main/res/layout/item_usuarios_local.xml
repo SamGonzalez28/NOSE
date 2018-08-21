@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margen_20"
+    android:background="@color/blueGrey"
+    android:id="@+id/texto">
+
+    <ImageView
+        android:id="@+id/img_usuarios"
+        android:layout_width="@dimen/menu_100"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margen_15"
+        android:layout_marginRight="@dimen/margen_15"
+        android:src="@drawable/equipo"
+        android:layout_marginTop="@dimen/margen_10"/>
+
+    <TextView
+        android:id="@+id/txt_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margen_5"
+        android:layout_toRightOf="@id/img_usuarios"
+        android:gravity="right"
+        android:text="@string/user"
+        android:textSize="@dimen/letra18"
+        android:textColor="@color/blanco"/>
+
+    <TextView
+        android:id="@+id/txt_nombres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margen_35"
+        android:layout_toRightOf="@id/img_usuarios"
+        android:text="@string/nombre"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_apellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margin_login"
+        android:layout_toRightOf="@id/img_usuarios"
+        android:text="@string/apellidos"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_ci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="85dp"
+        android:layout_toRightOf="@id/img_usuarios"
+        android:text="@string/CI"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="110dp"
+        android:layout_toRightOf="@id/img_usuarios"
+        android:text="@string/correo"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+    android:id="@+id/txt_direccion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/margen_20"
+    android:layout_marginTop="135dp"
+    android:layout_toRightOf="@id/img_usuarios"
+    android:text="@string/direccion"
+    android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="160dp"
+        android:layout_toRightOf="@id/img_usuarios"
+        android:text="@string/telefono"
+        android:textSize="@dimen/letra18" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginRight="@dimen/margin_reg_cli_20"
+        android:layout_marginBottom="@dimen/margen_5">
+
+
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/margen_40"
+            android:layout_height="@dimen/margen_40"
+            android:layout_marginTop="@dimen/margen_180"
+            android:layout_marginRight="@dimen/margen_10"
+            android:src="@mipmap/ic_delete"/>
+
+        <ImageButton
+            android:id="@+id/btn_edit"
+            android:layout_width="@dimen/margen_40"
+            android:layout_height="@dimen/margen_40"
+            android:layout_toRightOf="@id/btn_delete"
+            android:layout_marginTop="@dimen/margen_180"
+            android:src="@mipmap/ic_edit"/>
+    </RelativeLayout>
+
+</RelativeLayout>

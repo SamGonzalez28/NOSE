@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Perfil de Cliente"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margen_30"
+        android:layout_marginTop="@dimen/margen_80"
+        android:background="#f5f6fa"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/newuser" />
+
+        <TextView
+            android:id="@+id/txt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/user"
+            android:textSize="@dimen/letra18"/>
+
+
+        <TextView
+            android:id="@+id/txt_nombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/apellidos"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_cedulaCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ciCli"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_correoCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/correo"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+
+        <TextView
+            android:id="@+id/txt_direccionCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/direccion"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_tlfCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefono"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+
+        <Button
+            android:id="@+id/btn_regCliente"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/margen_30"
+            android:layout_marginTop="@dimen/margen_40"
+            android:background="@color/beniukonBronze"
+            android:text="Registrar"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</RelativeLayout>

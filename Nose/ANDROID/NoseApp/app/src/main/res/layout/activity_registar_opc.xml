@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".RegistarOpc">
+
+    <ScrollView
+        android:id="@+id/opc_reg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/img_local_menu">
+
+            <ImageButton
+                android:id="@+id/btn_newLocal"
+                android:layout_width="@dimen/menu_100"
+                android:layout_height="@dimen/menu_100"
+                android:src="@drawable/chef"
+                android:scaleType="fitXY"
+                android:background="@color/transparente"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                />
+
+            <ImageButton
+                android:layout_marginTop="50dp"
+                android:id="@+id/btn_newCli"
+                android:layout_width="@dimen/menu_100"
+                android:layout_height="@dimen/menu_100"
+                android:src="@drawable/newuser"
+                android:scaleType="fitXY"
+                android:background="@color/transparente"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

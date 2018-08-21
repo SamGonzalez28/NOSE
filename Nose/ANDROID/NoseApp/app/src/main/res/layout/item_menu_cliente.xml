@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margen_20"
+    android:background="@color/OrangeHibiscus">
+
+    <ImageView
+        android:id="@+id/img_menu"
+        android:layout_width="@dimen/menu_100"
+        android:layout_height="@dimen/menu_100"
+        android:layout_marginBottom="@dimen/margen_15"
+        android:layout_marginLeft="@dimen/margen_15"
+        android:layout_marginRight="@dimen/margen_15"
+        android:layout_marginTop="@dimen/margen_15"
+        android:src="@drawable/menu1" />
+
+    <TextView
+        android:id="@+id/txt_descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_80"
+        android:layout_marginTop="@dimen/margen_5"
+        android:layout_toRightOf="@id/img_menu"
+        android:gravity="right"
+        android:text="@string/descripcion"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/margen_80"
+        android:layout_marginTop="@dimen/margin_login"
+        android:layout_toRightOf="@id/img_menu"
+        android:text="@string/precio"
+        android:textSize="@dimen/letra18" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right">
+
+        <ImageButton
+            android:layout_width="@dimen/margin_login"
+            android:layout_height="@dimen/margin_login"
+            android:layout_marginTop="@dimen/margin_reg_cli_20"
+            android:background="@color/OrangeHibiscus"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_nuevo_round"
+            android:layout_marginRight="@dimen/margen_10"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="43dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_menu"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="102dp"
+        android:ems="10"
+        android:inputType="number" />
+
+
+</RelativeLayout>
