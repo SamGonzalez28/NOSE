@@ -53,11 +53,9 @@ public class Listar_menuActivity extends AppCompatActivity {
                 new Response.Listener<MenuJson[]>() {
                     @Override
                     public void onResponse(MenuJson[] response) {
-                        Log.i("ERROR","unonnnn");
+
                         listadeMenusAdap = new ListadeMenusAdap(Arrays.asList(response), getApplicationContext());
-                        Log.i("ERROR","Otra consua");
                         mi_lista.setAdapter(listadeMenusAdap);
-                        Log.i("ERROR ****",response.toString());
                     }
                 },
                 new Response.ErrorListener() {

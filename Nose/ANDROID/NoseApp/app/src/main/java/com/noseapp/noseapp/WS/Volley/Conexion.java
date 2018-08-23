@@ -8,7 +8,7 @@ import com.android.volley.Response;
 import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
 
 public class Conexion {
-    private static final String index_url ="https://nosews.000webhostapp.com/public/index.php";
+    private static final String index_url ="https://nosews.000webhostapp.com/public";
 
     public static VolleyPeticion<MenuJson[]> getListaMenu(
             @NonNull final Context context,
