@@ -1,5 +1,6 @@
 package com.noseapp.noseapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.zxing.Result;
+import com.noseapp.noseapp.Menu.Listar_menuActivity;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -34,6 +36,9 @@ public class LectorQR extends AppCompatActivity {
             vistaescaner.stopCamera();
             codigo = (EditText) findViewById(R.id.edCodigo);
             codigo.setText(dato);
+            InicioActivity.ID_EXTERNAL_QR = dato;
+            Intent intent = new Intent(LectorQR.this, Listar_menuActivity.class);
+            startActivity(intent);
         }
     }
 }

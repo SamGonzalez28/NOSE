@@ -37,7 +37,6 @@ public class Listar_menuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listar_menu);
 
         mi_lista = (ListView) findViewById(R.id.mi_lista);
-        boton = (Button) findViewById(R.id.btn_lista);
 
         listadeMenusAdap = new ListadeMenusAdap(this);
         mi_lista.setAdapter(listadeMenusAdap);
@@ -47,7 +46,7 @@ public class Listar_menuActivity extends AppCompatActivity {
         oyente();
     }
 
-    private void consultarWS() {
+    private void oyente() {
         VolleyPeticion<MenuJson[]> menus = Conexion.getListaMenu(this,
 
                 new Response.Listener<MenuJson[]>() {
@@ -66,21 +65,12 @@ public class Listar_menuActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT);
 
                         toast1.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                        Log.i("ERROR",error.getMessage());
+                        Log.i("ERROR", error.getMessage());
                         toast1.show();
                     }
 
                 }
         );
-       queue.add(menus);
-    }
-
-    public void oyente(){
-        boton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                consultarWS();
-            }
-        });
+        queue.add(menus);
     }
 }

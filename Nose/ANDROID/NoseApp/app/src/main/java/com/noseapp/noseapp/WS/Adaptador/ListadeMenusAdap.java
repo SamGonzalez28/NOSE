@@ -49,12 +49,9 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
 
         TextView precio = (TextView) item.findViewById(R.id.txt_precio);
         precio.setText(datalista.get(position).getPrecio());
-
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion);
         descripcion.setText(datalista.get(position).getDescripcion());
-
         ImageView imagen = (ImageView) item.findViewById(R.id.tipoMenu);
-
         String tipo = datalista.get(position).getTipo();
 
         if(tipo == "ALMUERZO") {

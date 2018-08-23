@@ -19,19 +19,18 @@
         android:layout_marginTop="@dimen/margen_15"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold|italic"/>
-    <Button
-        android:id="@+id/btn_lista"
+    <View
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="listar"/>
+        android:layout_height="1dp"
+        android:background="@color/negro"
+        />
 
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mi_lista"
         android:divider="@color/blanco"
-        android:dividerHeight="2dp"
+        android:dividerHeight="5dp"
         android:layout_marginTop="@dimen/margin_reg_cli_20"/>
 
 </LinearLayout>

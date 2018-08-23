@@ -27,7 +27,6 @@ public class GenerarQr extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generar_qr);
-        Button btn_gen = (Button) findViewById(R.id.btn_gen);
         final ImageView image = (ImageView) findViewById(R.id.img);
         Button btn_guar = (Button) findViewById(R.id.btn_guardar);
 

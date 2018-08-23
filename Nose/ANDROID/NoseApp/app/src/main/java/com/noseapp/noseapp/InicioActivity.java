@@ -19,6 +19,7 @@ public class InicioActivity extends AppCompatActivity {
 
     public static String TOKEN = "";
     public static String ID_EXTERNAL = "";
+    public static String ID_EXTERNAL_QR = "";
     public static String NOMBRE_WELCOME = "";
     public static String TIPO = "";
 

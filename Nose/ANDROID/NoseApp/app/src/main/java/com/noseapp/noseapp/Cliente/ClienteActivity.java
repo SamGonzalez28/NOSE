@@ -33,5 +33,13 @@ public class ClienteActivity extends AppCompatActivity {
 
             }
         });
+
+        btn_leerQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClienteActivity.this, LectorQR.class);
+                startActivity(intent);
+            }
+        });
     }
 }
