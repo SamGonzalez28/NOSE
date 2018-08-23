@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.noseapp.noseapp.R;
@@ -47,10 +48,19 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
         }
 
         TextView precio = (TextView) item.findViewById(R.id.txt_precio);
-        precio.setText(datalista.get(position).getJ_precio());
+        precio.setText(datalista.get(position).getPrecio());
 
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion);
-        descripcion.setText(datalista.get(position).getJ_descripcion());
+        descripcion.setText(datalista.get(position).getDescripcion());
+
+        ImageView imagen = (ImageView) item.findViewById(R.id.tipoMenu);
+
+        String tipo = datalista.get(position).getTipo();
+
+        if(tipo == "ALMUERZO") {
+            imagen.setImageBitmap(null);
+        }
+
         return item;
     }
 }

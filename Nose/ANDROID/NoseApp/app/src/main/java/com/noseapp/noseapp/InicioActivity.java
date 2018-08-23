@@ -17,6 +17,10 @@ public class InicioActivity extends AppCompatActivity {
 
     private final int splash = 3000;
 
+    public static String TOKEN = "";
+    public static String ID_EXTERNAL = "";
+    public static String NOMBRE_WELCOME = "";
+    public static String TIPO = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,4 +55,6 @@ public class InicioActivity extends AppCompatActivity {
             );
         }
     }
+
+
 }

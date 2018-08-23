@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/blanco"
     android:theme="@style/AppTheme"
     android:orientation="vertical"
@@ -89,7 +88,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:inputType="number"
                 android:hint="@string/telefono"
                 android:layout_marginHorizontal="@dimen/margen_30"/>
 
@@ -97,8 +95,7 @@
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true">
+            android:layout_height="wrap_content">
 
             <AutoCompleteTextView
                 android:id="@+id/passwordLocal"
@@ -110,7 +107,6 @@
                 android:layout_marginHorizontal="@dimen/margen_30"/>
 
         </android.support.design.widget.TextInputLayout>
-
 
         <Button
             android:id="@+id/btn_regLocal"

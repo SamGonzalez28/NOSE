@@ -34,8 +34,7 @@ public class LocalActivity extends AppCompatActivity {
         clientes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LocalActivity.this, LectorQR.class);
-                startActivity(intent);
+                //ListarClientesDeLocal
             }
         });
 

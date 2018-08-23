@@ -10,7 +10,7 @@
     <string name="listaCli">Lista de Clientes</string>
     <string name="listaMenu">Lista de Menu</string>
     <string name="listaRegistros">Lista de Registros</string>
-    <string name="welcome">Bienvenido</string>
+    <string name="welcome">Bienvenido </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Usuario</string>
     <string name="prompt_password">Contraseña</string>
@@ -22,6 +22,8 @@
     <string name="error_field_required">Campos Requeridos</string>
     <string name="registrar">¿No tienes cuenta? Registrate</string>
     <string name="usuario">Usuario</string>
+    <string name="v_usuario">Falta ingresar usuario</string>
+    <string name="v_clave">Falta ingresar clave</string>
     <!-- Strings de registrar -->
     <string name="newClient">Nuevo Cliente</string>
     <string name="nombresCli">Ingrese sus nombres</string>
