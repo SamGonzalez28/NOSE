@@ -2,6 +2,7 @@ package com.noseapp.noseapp.WS.Volley;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -92,6 +93,52 @@ public class Conexion {
                     errorListener
             );
             request.setResponseClass(LocalJson.class);
+            return request;
+        }
+    }
+
+
+    public static VolleyPeticion<ClienteJson> registroCliente(
+            @NonNull final Context context,
+            @NonNull final HashMap mapa,
+            @NonNull Response.Listener<ClienteJson> responseListener,
+            @NonNull Response.ErrorListener errorListener
+    ) {
+        {
+            final String url = index_url + "/cliente/nuevo";
+            VolleyPeticion request = new VolleyPeticion(
+                    context,
+                    Request.Method.POST,
+                    url,
+                    mapa,
+                    HashMap.class,
+                    String.class,
+                    responseListener,
+                    errorListener
+            );
+            request.setResponseClass(ClienteJson.class);
+            return request;
+        }
+    }
+
+
+    public static VolleyPeticion<MenuJson> registroMenu(
+            @NonNull final Context context,
+            @NonNull HashMap<String, String> mapa,
+            @NonNull Response.Listener<MenuJson> responseListener,
+            @NonNull Response.ErrorListener errorListener) {
+        {
+            final String url = index_url + "/comida/nuevo";
+            VolleyPeticion request = new VolleyPeticion(
+                    context,
+                    Request.Method.POST,
+                    url,
+                    mapa,
+                    HashMap.class,
+                    String.class,
+                    responseListener,
+                    errorListener);
+            request.setResponseClass(MenuJson.class);
             return request;
         }
     }

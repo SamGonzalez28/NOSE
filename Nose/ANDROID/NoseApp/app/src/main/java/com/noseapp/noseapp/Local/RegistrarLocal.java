@@ -1,5 +1,6 @@
 package com.noseapp.noseapp.Local;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.noseapp.noseapp.Login.LoginActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
@@ -46,42 +48,47 @@ public class RegistrarLocal extends AppCompatActivity {
         barra = (ProgressBar) findViewById(R.id.loadingRegLocal);
 
         btn_regLocal = (Button) findViewById(R.id.btn_regLocal);
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+
 
         btn_regLocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                oyente();
             }
         });
     }
 
     public void oyente() {
-        final String name = this.nombre.getText().toString().trim();
-        final String RUC = this.ruc.getText().toString().trim();
-        final String Direccion = this.domicilio.getText().toString().trim();
-        final String tlfg = this.telefono.getText().toString().trim();
-        final String pass = this.password.getText().toString().trim();
+        String name = this.nombre.getText().toString().trim();
+        String RUC = this.ruc.getText().toString().trim();
+        String Direccion = this.domicilio.getText().toString().trim();
+        String tlf = this.telefono.getText().toString().trim();
+        String pass = this.password.getText().toString().trim();
 
-        HashMap<String, String> mapa = new HashMap<>();
-        mapa.put("nombre", name);
-        mapa.put("ruc", RUC);
-        mapa.put("direccion", Direccion);
-        mapa.put("telefono", tlfg);
-        mapa.put("clave", pass);
-        VolleyPeticion<LocalJson> inicio = Conexion.registroLocal(
+        HashMap<String, String> mp = new HashMap<>();
+        mp.put("nombre", name);
+        mp.put("ruc", RUC);
+        mp.put("direccion", Direccion);
+        mp.put("telefono", tlf);
+        mp.put("clave", pass);
+        VolleyPeticion<LocalJson> registrarLocal = Conexion.registroLocal(
                 getApplicationContext(),
-                mapa,
+                mp,
                 new Response.Listener<LocalJson>() {
                     @Override
                     public void onResponse(LocalJson response) {
-
+                        Toast.makeText(RegistrarLocal.this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegistrarLocal.this, LoginActivity.class);
+                        startActivity(intent);
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(RegistrarLocal.this, "NO SE REGISTRO", Toast.LENGTH_SHORT).show();
                     }
                 }
         );
-        requestQueue.add(inicio);
+        requestQueue.add(registrarLocal);
     }
 }

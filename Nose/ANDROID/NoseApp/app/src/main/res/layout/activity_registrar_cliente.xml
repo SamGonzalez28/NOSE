@@ -115,14 +115,13 @@
             android:singleLine="true"
             android:layout_marginHorizontal="@dimen/margen_30"/>
 
+
         <EditText
             android:id="@+id/txt_passwordCli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:hint="@string/password"
-            android:imeActionLabel="@string/action_sign_in_short"
-            android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
             android:singleLine="true"

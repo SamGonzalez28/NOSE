@@ -30,7 +30,6 @@ public class InicioActivity extends AppCompatActivity {
 
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                // Cuando pasen los 3 segundos, pasamos a la actividad principal de la aplicación
                 Intent intent = new Intent(InicioActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
@@ -48,7 +47,6 @@ public class InicioActivity extends AppCompatActivity {
         int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
         if (permission != PackageManager.PERMISSION_GRANTED) {
-// We don’t have permission so prompt the user
             ActivityCompat.requestPermissions(
                     activity,
                     PERMISSIONS_STORAGE,

@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
+import com.noseapp.noseapp.RegistarOpc;
 import com.noseapp.noseapp.WS.ModelosJson.ClienteJson;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
@@ -43,8 +44,18 @@ public class LoginActivity extends AppCompatActivity {
         ed_password = (EditText) findViewById(R.id.ed_password);
         ed_user = (EditText) findViewById(R.id.ed_user);
         btn_log = (Button) findViewById(R.id.btnlog);
+        txt_reg = (TextView) findViewById(R.id.txt_reg);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         oyentes();
+
+        txt_reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegistarOpc.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     private void oyentes() {
@@ -92,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                 );
                 requestQueue.add(inicio);
+
             }
         });
     }
@@ -99,7 +111,6 @@ public class LoginActivity extends AppCompatActivity {
     private void logClient() {
         String u = ed_user.getText().toString();
         String p = ed_password.getText().toString();
-
         barra.setVisibility(View.VISIBLE);
         HashMap<String, String> map = new HashMap<>();
         map.put("user", u);
@@ -119,9 +130,8 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginActivity.this, Welcome.class);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(LoginActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Datos Invalidos VERIFIQUELOS PORFAVOR", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -129,7 +139,6 @@ public class LoginActivity extends AppCompatActivity {
                         barra.setVisibility(View.GONE);
                         VolleyTiposdeError errores = VolleyProcesadordeResultado.parseErrorResponse(error);
                         Toast.makeText(getApplicationContext(), errores.errorMessage, Toast.LENGTH_SHORT).show();
-
                         barra.setVisibility(View.GONE);
                     }
                 }
