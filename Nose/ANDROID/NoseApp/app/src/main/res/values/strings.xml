@@ -62,4 +62,8 @@
     <string name="correo">correo</string>
     <string name="title_activity_perfil_cliente">PerfilCliente</string>
     <string name="title_activity_generar_qr">GenerarQr</string>
+
+    <!--Registros-->
+    <string name="error_lis_re_cl">Error listar registros por Cliente</string>
+    <string name="sin_regi">No se encontraron registros</string>
 </resources>

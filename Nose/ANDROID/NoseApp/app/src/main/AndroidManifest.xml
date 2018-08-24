@@ -19,6 +19,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -34,7 +35,9 @@
         <activity android:name=".Cliente.perfil_cliente_Activity" />
         <activity android:name=".Cliente.ClienteActivity" />
         <activity android:name=".Local.GenerarQr" />
-        <activity android:name=".Menu.Listar_menuActivity"></activity>
+        <activity android:name=".Menu.Listar_menuActivity" />
+        <activity android:name=".Local.perfil_local_Activity"></activity>
+        <activity android:name=".Registros.Listar_registros_cliente"></activity>
     </application>
 
 </manifest>

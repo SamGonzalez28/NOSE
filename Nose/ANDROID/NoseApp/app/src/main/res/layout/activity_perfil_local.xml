@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme"
+    tools:context=".Local.perfil_local_Activity">
+
+    <ProgressBar
+        android:id="@+id/loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Perfil de Local"
+        android:textColor="@color/negro"
+        android:textSize="25dp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margen_30"
+        android:layout_marginTop="@dimen/menu_100"
+        android:background="#f5f6fa"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/chef" />
+
+        <TextView
+            android:id="@+id/txt_userlocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/negro"
+            android:text="@string/user"
+            android:textSize="@dimen/letra18"/>
+
+
+        <TextView
+            android:id="@+id/nombreL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/rucL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/direccL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/tlfL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/negro"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+    </LinearLayout>
+</RelativeLayout>

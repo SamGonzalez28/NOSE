@@ -27,36 +27,36 @@ import java.util.HashMap;
 
 public class RegistrarMenu extends AppCompatActivity {
     EditText precio, descripcion;
-    //RadioButton desayuno, almuerzo, cena, entredia, lunch;
+    RadioButton desayuno, almuerzo, cena, entredia, lunch;
     RadioGroup tipoMenu;
     Button btn_regMenu;
     RequestQueue requestQueue;
-    TextView tipoM;
-
+    String menu = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_menu);
 
-       /* precio = (EditText) findViewById(R.id.ed_pecio);
+        precio = (EditText) findViewById(R.id.ed_pecio);
         descripcion = (EditText) findViewById(R.id.ed_descrip);
-        desayuno = (RadioButton) findViewById(R.id.desayuno);
+
         almuerzo = (RadioButton) findViewById(R.id.almuerzo);
         cena = (RadioButton) findViewById(R.id.cena);
         lunch = (RadioButton) findViewById(R.id.lunch);
-        entredia = (RadioButton) findViewById(R.id.entreDia);*/
+        entredia = (RadioButton) findViewById(R.id.entreDia);
 
         tipoMenu = (RadioGroup) findViewById(R.id.tipoMenuk);
-
+        desayuno = (RadioButton) findViewById(R.id.desayuno);
         btn_regMenu = (Button) findViewById(R.id.btn_regMenu);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         btn_regMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                oyente();
+                accion();
             }
         });
+        oyente();
     }
 
     public void oyente() {
@@ -64,22 +64,18 @@ public class RegistrarMenu extends AppCompatActivity {
         tipoMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
+
                 if (checkedId == R.id.desayuno) {
-                    tipoM.setText(R.string.desayuno);
-                    accion();
+                    menu = getApplicationContext().getString(R.string.desayuno);
                 } else if (checkedId == R.id.almuerzo) {
-                    tipoM.setText(R.string.Almuerzo);
-                    accion();
+                    menu = getApplicationContext().getString(R.string.Almuerzo);
                 } else if (checkedId == R.id.cena) {
-                    tipoM.setText(R.string.Cena);
-                    accion();
+                    menu = getApplicationContext().getString(R.string.Cena);
                 } else if (checkedId == R.id.lunch) {
-                    tipoM.setText(R.string.Lunch);
-                    accion();
+                    menu = getApplicationContext().getString(R.string.Lunch);
                 } else if (checkedId == R.id.entreDia) {
-                    tipoM.setText(R.string.EntreDia);
-                    accion();
-                }else{
+                    menu = getApplicationContext().getString(R.string.EntreDia);
+                } else {
                     Toast.makeText(getApplicationContext(), "NO SELECCIONA", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -87,32 +83,35 @@ public class RegistrarMenu extends AppCompatActivity {
     }
 
     public void accion() {
-        String tipoM = this.tipoM.toString().trim();
-        String precioM = this.precio.toString().trim();
-        String descrM = this.descripcion.toString().trim();
+        Log.i("accion", menu);
+        if (menu.trim().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "SELECCIONE UN TIPO DE MENU", Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            HashMap<String, String> mp = new HashMap<>();
+            mp.put("tipo", menu);
+            mp.put("precio", precio.getText().toString().trim());
+            mp.put("descripcion", descripcion.getText().toString().trim());
+            mp.put("local", InicioActivity.ID_EXTERNAL);
+            VolleyPeticion<MenuJson> registrarMenu = Conexion.registroMenu(
+                    getApplicationContext(),
+                    mp,
+                    new Response.Listener<MenuJson>() {
+                        @Override
+                        public void onResponse(MenuJson response) {
+                            Toast.makeText(getApplicationContext(), "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegistrarMenu.this, OpcMenuLocal.class);
+                            startActivity(intent);
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(), "NO SE REGISTRO", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+            );
+            requestQueue.add(registrarMenu);
+        }
 
-        HashMap<String, String> mp = new HashMap<>();
-        mp.put("tipo", tipoM);
-        mp.put("precio", precioM);
-        mp.put("descripcion", descrM);
-        mp.put("id_local", InicioActivity.ID_EXTERNAL);
-        VolleyPeticion<MenuJson> registrarMenu = Conexion.registroMenu(
-                getApplicationContext(),
-                mp,
-                new Response.Listener<MenuJson>() {
-                    @Override
-                    public void onResponse(MenuJson response) {
-                        Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RegistrarMenu.this, OpcMenuLocal.class);
-                        startActivity(intent);
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "NO SE REGISTRO", Toast.LENGTH_SHORT).show();
-                    }
-                }
-        );
-        requestQueue.add(registrarMenu);
     }
 }

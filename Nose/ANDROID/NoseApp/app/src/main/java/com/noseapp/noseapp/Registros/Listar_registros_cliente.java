@@ -1,10 +1,10 @@
-package com.noseapp.noseapp.Menu;
+package com.noseapp.noseapp.Registros;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,48 +14,48 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
-import com.noseapp.noseapp.WS.Adaptador.ListadeMenusAdap;
-import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
+import com.noseapp.noseapp.WS.Adaptador.ListadeRegistrosAdap;
+import com.noseapp.noseapp.WS.ModelosJson.RegistrosJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
 
-public class Listar_menuActivity extends AppCompatActivity {
+public class Listar_registros_cliente extends AppCompatActivity {
 
     private ListView mi_lista;
 
-    private ListadeMenusAdap listadeMenusAdap;
+    private ListadeRegistrosAdap listadeRegistrosAdap;
 
     private RequestQueue queue;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
 
         mi_lista = (ListView) findViewById(R.id.mi_lista);
 
-        listadeMenusAdap = new ListadeMenusAdap(this);
-        mi_lista.setAdapter(listadeMenusAdap);
+        listadeRegistrosAdap = new ListadeRegistrosAdap(this);
+        mi_lista.setAdapter(listadeRegistrosAdap);
 
         queue = Volley.newRequestQueue(this);
 
         oyente();
-    }
 
+    }
     private void oyente() {
-        VolleyPeticion<MenuJson[]> menus = Conexion.getListaMenuAdmin(
+        VolleyPeticion<RegistrosJson[]> registros = Conexion.getListaRegistrosClientes(
                 getApplicationContext(),
                 InicioActivity.TOKEN,
                 InicioActivity.ID_EXTERNAL,
 
-                new Response.Listener<MenuJson[]>() {
+                new Response.Listener<RegistrosJson[]>() {
                     @Override
-                    public void onResponse(MenuJson[] response) {
+                    public void onResponse(RegistrosJson[] response) {
 
-                        listadeMenusAdap = new ListadeMenusAdap(Arrays.asList(response), getApplicationContext());
-                        mi_lista.setAdapter(listadeMenusAdap);
+                        listadeRegistrosAdap = new ListadeRegistrosAdap(Arrays.asList(response), getApplicationContext());
+                        mi_lista.setAdapter(listadeRegistrosAdap);
                     }
                 },
                 new Response.ErrorListener() {
@@ -72,6 +72,6 @@ public class Listar_menuActivity extends AppCompatActivity {
 
                 }
         );
-        queue.add(menus);
+        queue.add(registros);
     }
 }

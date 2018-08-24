@@ -19,7 +19,7 @@ public class LocalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_local);
 
         ImageButton menu = (ImageButton) findViewById(R.id.btn_menus);
-        //ImageButton registros = (ImageButton) findViewById(R.id.btn_registros);
+        ImageButton registros = (ImageButton) findViewById(R.id.btn_registros);
         ImageButton  clientes = (ImageButton) findViewById(R.id.btn_clientes);
         ImageButton qr = (ImageButton) findViewById(R.id.btn_qr);
 
@@ -38,13 +38,13 @@ public class LocalActivity extends AppCompatActivity {
             }
         });
 
-       /* registros.setOnClickListener(new View.OnClickListener() {
+       registros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LocalActivity.this, ListarRegistros.class);
+                Intent intent = new Intent(LocalActivity.this, perfil_local_Activity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
        qr.setOnClickListener(new View.OnClickListener() {
            @Override

@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context=".Menu.RegistrarMenu">
     <ProgressBar
-        android:id="@+id/loading"
+        android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,12 +47,11 @@
 
         <RadioGroup
             android:id="@+id/tipoMenuk"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="@dimen/margen_40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_5"
-            android:contextClickable="true"
-            android:visibility="visible">
+            android:layout_marginHorizontal="@dimen/margen_40"
+            android:contextClickable="true">
 
             <RadioButton
                 android:id="@+id/desayuno"
@@ -67,46 +66,55 @@
                 android:text="@string/Almuerzo" />
 
             <RadioButton
-                android:id="@+id/lunch"
+                android:id="@+id/cena"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Lunch" />
 
             <RadioButton
-                android:id="@+id/entreDia"
+                android:id="@+id/lunch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/EntreDia" />
 
             <RadioButton
-                android:id="@+id/cena"
+                android:id="@+id/entreDia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Cena" />
         </RadioGroup>
 
-            <EditText
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
                 android:id="@+id/ed_pecio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="@string/precioMenu"
                 android:inputType="numberDecimal"
-                android:layout_marginTop="20dp"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:layout_marginHorizontal="@dimen/margen_30"/>
 
+        </android.support.design.widget.TextInputLayout>
 
-            <EditText
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
                 android:id="@+id/ed_descrip"
-                android:layout_marginTop="@dimen/margen_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="@string/descripcionMenu"
                 android:inputType="text"
                 android:layout_marginHorizontal="@dimen/margen_30"/>
+
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_regMenu"

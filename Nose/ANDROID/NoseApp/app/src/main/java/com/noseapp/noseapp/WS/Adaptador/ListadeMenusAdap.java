@@ -40,14 +40,12 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View item = inflater.inflate(R.layout.item_menu_local,null);
 
-
-
         TextView precio = (TextView) item.findViewById(R.id.txt_precio);
-        precio.setText(datalista.get(position).getPrecio());
+        precio.setText(datalista.get(position).precio);
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion);
-        descripcion.setText(datalista.get(position).getDescripcion());
+        descripcion.setText(datalista.get(position).descripcion);
         ImageView imagen = (ImageView) item.findViewById(R.id.img_menu);
-        String tipo = datalista.get(position).getTipo();
+        String tipo = datalista.get(position).tipo;
 
 
         return item;

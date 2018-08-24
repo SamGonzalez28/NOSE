@@ -15,7 +15,7 @@
         android:id="@+id/btn_leerQr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:src="@drawable/scanner"
         android:background="@color/blanco"
         />
@@ -24,9 +24,16 @@
         android:id="@+id/btn_Editclientes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:clickable="true"
         android:src="@drawable/edituser"
         android:background="@color/blanco" />
 
+    <ImageButton
+        android:id="@+id/btn_listaregistros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/factura"
+        android:background="@color/blanco"/>
 </LinearLayout>
