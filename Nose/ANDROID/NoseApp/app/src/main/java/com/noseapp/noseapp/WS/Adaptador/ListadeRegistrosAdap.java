@@ -48,15 +48,16 @@ public class ListadeRegistrosAdap extends ArrayAdapter<RegistrosJson> {
         TextView cantidad = (TextView) item.findViewById(R.id.txt_cant);
         cantidad.setText(datalista.get(position).cantidad);
 
-        TextView precio = (TextView) item.findViewById(R.id.txt_valor);
-        precio.setText(datalista.get(position).valor);
+        TextView valor = (TextView) item.findViewById(R.id.txt_valor);
+        valor.setText(datalista.get(position).valor);
 
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion_m);
-        descripcion.setText(datalista.get(position).descripcion);
+        descripcion.setText(datalista.get(position).menu);
 
-
-
-
+        TextView precio = (TextView) item.findViewById(R.id.txt_precio);
+        precio.setText(datalista.get(position).precio);
         return item;
     }
+
+
 }

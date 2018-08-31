@@ -16,18 +16,18 @@
         android:src="@drawable/menu1" />
 
     <TextView
-        android:id="@+id/txt_descripcion"
+        android:id="@+id/txt_descripcion123"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/margen_80"
         android:layout_marginTop="@dimen/margen_5"
         android:layout_toRightOf="@id/img_menu"
         android:gravity="right"
+        android:layout_marginRight="10dp"
         android:text="@string/descripcion"
-        android:textSize="@dimen/letra18" />
+        android:textSize="25dp" />
 
     <TextView
-        android:id="@+id/txt_precio"
+        android:id="@+id/txt_precio123"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -35,32 +35,15 @@
         android:layout_marginTop="@dimen/margin_login"
         android:layout_toRightOf="@id/img_menu"
         android:text="@string/precio"
-        android:textSize="@dimen/letra18" />
+        android:textSize="30dp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right">
-
-        <ImageButton
-            android:layout_width="@dimen/margin_login"
-            android:layout_height="@dimen/margin_login"
-            android:layout_marginTop="@dimen/margin_reg_cli_20"
-            android:background="@color/OrangeHibiscus"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_nuevo_round"
-            android:layout_marginRight="@dimen/margen_10"/>
-    </RelativeLayout>
-
-    <EditText
-        android:id="@+id/editText"
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="43dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/img_menu"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="102dp"
-        android:ems="10"
-        android:inputType="number" />
+        android:layout_marginEnd="102dp" />
 
 
 </RelativeLayout>

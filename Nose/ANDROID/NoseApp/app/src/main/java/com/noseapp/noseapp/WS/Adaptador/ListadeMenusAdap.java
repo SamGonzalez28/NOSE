@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +29,7 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
     }
 
     public ListadeMenusAdap(Context context) {
-        super(context,R.layout.item_menu_vacio_local, new ArrayList<MenuJson>());
+        super(context, R.layout.item_menu_vacio_local, new ArrayList<MenuJson>());
 
         this.datalista = new ArrayList<MenuJson>();
         this.mContext = context;
@@ -38,15 +39,12 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View item = inflater.inflate(R.layout.item_menu_local,null);
+        View item = inflater.inflate(R.layout.item_menu_local, null);
 
         TextView precio = (TextView) item.findViewById(R.id.txt_precio);
         precio.setText(datalista.get(position).precio);
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion);
         descripcion.setText(datalista.get(position).descripcion);
-        ImageView imagen = (ImageView) item.findViewById(R.id.img_menu);
-        String tipo = datalista.get(position).tipo;
-
 
         return item;
     }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/blanco">
+
+
+    <ListView
+        android:id="@+id/ListaCarrito"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/fondo"
+        android:dividerHeight="6dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_flot_pedir"
+        android:layout_width="@dimen/menu_100"
+        android:layout_height="@dimen/menu_100"
+        app:backgroundTint="@color/icon"
+        app:srcCompat="@drawable/nuevo"
+        android:layout_marginLeft="@dimen/margen_20"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margen_20"/>
+
+</RelativeLayout>

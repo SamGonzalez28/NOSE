@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.noseapp.noseapp.InicioActivity;
+import com.noseapp.noseapp.Local.Admin_Lateral;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
 import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
@@ -54,6 +55,7 @@ public class RegistrarMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 accion();
+                btn_regMenu.setEnabled(false);
             }
         });
         oyente();
@@ -100,13 +102,18 @@ public class RegistrarMenu extends AppCompatActivity {
                         @Override
                         public void onResponse(MenuJson response) {
                             Toast.makeText(getApplicationContext(), "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegistrarMenu.this, OpcMenuLocal.class);
+                            Intent intent = new Intent(RegistrarMenu.this, Admin_Lateral.class);
                             startActivity(intent);
+                            finish();
                         }
                     }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
                             Toast.makeText(getApplicationContext(), "NO SE REGISTRO", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegistrarMenu.this, Admin_Lateral.class);
+                            startActivity(intent);
+                            finish();
+                            btn_regMenu.setEnabled(true);
                         }
                     }
             );

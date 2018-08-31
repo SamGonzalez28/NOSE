@@ -24,6 +24,7 @@ public class OpcMenuLocal extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(OpcMenuLocal.this, RegistrarMenu.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -32,6 +33,7 @@ public class OpcMenuLocal extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(OpcMenuLocal.this, Listar_menuActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

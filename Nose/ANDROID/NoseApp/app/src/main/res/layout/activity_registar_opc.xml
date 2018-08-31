@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     android:visibility="visible"
-    tools:context=".RegistarOpc">
+    tools:context=".Login.RegistarOpc">
 
-    <ScrollView
-        android:id="@+id/opc_reg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Local      o        Cliente"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="@dimen/menu_100"
+        android:layout_marginBottom="@dimen/margin_login"/>
+
 
         <LinearLayout
             android:id="@+id/email_login_form"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="@dimen/img_local_menu">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal">
 
             <ImageButton
                 android:id="@+id/btn_newLocal"
                 android:layout_width="@dimen/menu_100"
                 android:layout_height="@dimen/menu_100"
-                android:src="@drawable/chef"
+                android:src="@drawable/local"
                 android:scaleType="fitXY"
                 android:background="@color/transparente"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginRight="@dimen/margen_40"
                 />
 
             <ImageButton
@@ -42,9 +50,7 @@
                 android:scaleType="fitXY"
                 android:background="@color/transparente"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 />
 
         </LinearLayout>
-    </ScrollView>
-</RelativeLayout>
+</LinearLayout>

@@ -3,7 +3,9 @@ package com.noseapp.noseapp;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +13,24 @@ import android.os.Bundle;
 
 
 import com.noseapp.noseapp.Login.LoginActivity;
+import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
+
+import java.util.ArrayList;
 
 
 public class InicioActivity extends AppCompatActivity {
 
-    private final int splash = 3000;
+    private final int splash = 5000;
 
     public static String TOKEN = "";
     public static String ID_EXTERNAL = "";
     public static String ID_EXTERNAL_QR = "";
     public static String NOMBRE_WELCOME = "";
     public static String TIPO = "";
+    public static String itemListaLocal;
+    public static ArrayList<String> carrito = new ArrayList<>();
+    public static final String user = "";
+    public static final String password = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +46,23 @@ public class InicioActivity extends AppCompatActivity {
         }, splash);
         verifyStoragePermissions(this);
     }
+
+
+
+
+
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA
     };
 
     public static void verifyStoragePermissions(Activity activity) {
-        int permission = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionW = ActivityCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionC = ActivityCompat.checkSelfPermission(activity, Manifest.permission.CAMERA);
 
-        if (permission != PackageManager.PERMISSION_GRANTED) {
+        if (permissionW != PackageManager.PERMISSION_GRANTED || permissionC != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(
                     activity,
                     PERMISSIONS_STORAGE,
@@ -55,5 +71,9 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
 
+    public void guardarDatosLogin(){
+        SharedPreferences preferences = getSharedPreferences(user,MODE_PRIVATE);
+
+    }
 
 }

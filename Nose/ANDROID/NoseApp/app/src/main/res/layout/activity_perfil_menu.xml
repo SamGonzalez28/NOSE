@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Menu.PerfilMenu">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/margen_30"
+            android:layout_marginTop="@dimen/margen_40"
+            android:background="#f5f6fa"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/menu" />
+
+            <TextView
+                android:id="@+id/ed_tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="hgjhvgjhbjhb,"
+                android:textColor="@color/beniukonBronze"
+                android:textSize="30dp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/ed_descrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/margen_30"
+                android:hint="@string/descripcionMenu"
+                android:inputType="text"
+                android:textSize="@dimen/margen_30" />
+
+            <AutoCompleteTextView
+                android:id="@+id/ed_pecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/margen_30"
+                android:hint="@string/precioMenu"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="@dimen/margen_30" />
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginHorizontal="60dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_menuMod"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/margen_40"
+                android:background="@color/beniukonBronze"
+                android:text="Modificar"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_eliMod"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@color/beniukonBronze"
+                android:text="Eliminar"
+                android:textStyle="bold" />
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>

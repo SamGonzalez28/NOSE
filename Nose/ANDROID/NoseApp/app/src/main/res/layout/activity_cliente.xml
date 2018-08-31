@@ -1,39 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical"
     android:theme="@style/AppTheme"
-    tools:context=".Cliente.ClienteActivity"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical">
+    tools:context=".Cliente.ClienteActivity">
 
-    <ImageButton
-
-        android:id="@+id/btn_leerQr"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/scanner"
-        android:background="@color/blanco"
-        />
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="@dimen/margen_30"
+        android:background="#f5f6fa"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal">
 
-    <ImageButton
-        android:id="@+id/btn_Editclientes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:clickable="true"
-        android:src="@drawable/edituser"
-        android:background="@color/blanco" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/viewuser" />
 
-    <ImageButton
-        android:id="@+id/btn_listaregistros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/factura"
-        android:background="@color/blanco"/>
-</LinearLayout>
+        <TextView
+            android:id="@+id/txt_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/user"
+            android:textSize="@dimen/letra18"/>
+
+
+        <TextView
+            android:id="@+id/txt_nombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/apellidos"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_cedulaCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ciCli"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_correoCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/correo"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+
+        <TextView
+            android:id="@+id/txt_direccionCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/direccion"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+        <TextView
+            android:id="@+id/txt_tlfCli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telefono"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_margin="@dimen/margen_10"/>
+
+    </LinearLayout>
+</RelativeLayout>

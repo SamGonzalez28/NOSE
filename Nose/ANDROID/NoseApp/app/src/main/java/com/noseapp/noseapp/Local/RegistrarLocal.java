@@ -55,6 +55,7 @@ public class RegistrarLocal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 oyente();
+                btn_regLocal.setEnabled(false);
             }
         });
     }
@@ -81,11 +82,13 @@ public class RegistrarLocal extends AppCompatActivity {
                         Toast.makeText(RegistrarLocal.this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegistrarLocal.this, LoginActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(RegistrarLocal.this, "NO SE REGISTRO", Toast.LENGTH_SHORT).show();
+                        btn_regLocal.setEnabled(true);
                     }
                 }
         );

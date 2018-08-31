@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.android.gms.common.api.Response;
 import com.noseapp.noseapp.Cliente.ClienteActivity;
-import com.noseapp.noseapp.Local.LocalActivity;
-import com.noseapp.noseapp.WS.ModelosJson.ClienteJson;
+import com.noseapp.noseapp.Cliente.Cliente_Lateral;
+import com.noseapp.noseapp.Local.Admin_Lateral;
 
 public class Welcome extends AppCompatActivity {
 
@@ -28,8 +26,9 @@ public class Welcome extends AppCompatActivity {
             ed_welcome.setText(InicioActivity.NOMBRE_WELCOME);
             new Handler().postDelayed(new Runnable() {
                 public void run() {
-                    Intent intent = new Intent(Welcome.this, LocalActivity.class);
+                    Intent intent = new Intent(Welcome.this, Admin_Lateral.class);
                     startActivity(intent);
+                    finish();
                 }
             }, splash);
 
@@ -37,8 +36,9 @@ public class Welcome extends AppCompatActivity {
             ed_welcome.setText(InicioActivity.NOMBRE_WELCOME);
             new Handler().postDelayed(new Runnable() {
                 public void run() {
-                    Intent intent = new Intent(Welcome.this, ClienteActivity.class);
+                    Intent intent = new Intent(Welcome.this, Cliente_Lateral.class);
                     startActivity(intent);
+                    finish();
                 }
             }, splash);
         }

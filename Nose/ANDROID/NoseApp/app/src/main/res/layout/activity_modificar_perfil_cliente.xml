@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Cliente.ModificarPerfilClienteActivity">
+
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margen_30"
+            android:layout_marginTop="@dimen/margen_15"
+            android:background="#f5f6fa"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/edituser" />
+
+            <TextView
+                android:id="@+id/txt_userlocal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/user"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/letra18" />
+
+            <EditText
+                android:id="@+id/txt_nombresMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:text="@string/nombre"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <EditText
+                android:id="@+id/txt_apellidosMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:text="@string/apellidos"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <EditText
+                android:id="@+id/txt_cedulaCliMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:text="@string/ciCli"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <EditText
+                android:id="@+id/txt_correoCliMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:text="@string/correo"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+
+            <EditText
+                android:id="@+id/txt_direccionCliMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:hint="@string/direccion"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <EditText
+                android:id="@+id/txt_tlfCliMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:hint="@string/telefono"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <EditText
+                android:id="@+id/txt_userCliMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:hint="@string/userCli"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <EditText
+                android:id="@+id/txt_passCliMod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen_10"
+                android:hint="@string/password"
+                android:textColor="@color/RichGardenia"
+                android:textSize="@dimen/letra22" />
+
+            <Button
+                android:id="@+id/btn_ClienteMod"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margen_30"
+                android:layout_marginTop="@dimen/margen_40"
+                android:background="@color/beniukonBronze"
+                android:text="Modificar"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

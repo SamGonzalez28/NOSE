@@ -16,8 +16,8 @@ import java.util.Calendar;
 
 public class Save {
     Context TheThis;
-    private String NameOfFolder = "/Qr";
-    private String NameOfFile = "Qr";
+    private String NameOfFolder = "/CODIGO";
+    private String NameOfFile = InicioActivity.NOMBRE_WELCOME+"- -";
     public void SaveImage(Context context, Bitmap ImageToSave) {
         TheThis = context;
         String file_path = Environment.getExternalStorageDirectory().getAbsolutePath() + NameOfFolder;
@@ -26,7 +26,7 @@ public class Save {
         if (!dir.exists()) {
             dir.mkdirs();
         }
-        File file = new File(dir, NameOfFile + CurrentDateAndTime + ".jpg");
+        File file = new File(dir, NameOfFile +"_-_"+ CurrentDateAndTime + ".jpg");
         try {
             FileOutputStream fOut = new FileOutputStream(file);
             ImageToSave.compress(Bitmap.CompressFormat.JPEG, 85, fOut);

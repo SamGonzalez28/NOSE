@@ -1,10 +1,12 @@
 package com.noseapp.noseapp.Menu;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
-import android.widget.Button;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,9 +27,12 @@ public class Listar_menuActivity extends AppCompatActivity {
 
     private ListView mi_lista;
 
+    private FloatingActionButton btn_nuevo;
+
     private ListadeMenusAdap listadeMenusAdap;
 
     private RequestQueue queue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +40,34 @@ public class Listar_menuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listar);
 
         mi_lista = (ListView) findViewById(R.id.mi_lista);
+        mi_lista.setClickable(true);
+        mi_lista.setEmptyView(findViewById(android.R.id.empty));
 
         listadeMenusAdap = new ListadeMenusAdap(this);
         mi_lista.setAdapter(listadeMenusAdap);
+
+        mi_lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(Listar_menuActivity.this ,PerfilMenu.class);
+                String extMenu = listadeMenusAdap.getItem(position).external_id;
+                InicioActivity.itemListaLocal = extMenu;
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+         btn_nuevo = (FloatingActionButton) findViewById(R.id.btn_flot_nuevo);
+
+         btn_nuevo.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(Listar_menuActivity.this, RegistrarMenu.class);
+                 startActivity(intent);
+                 finish();
+             }
+         });
 
         queue = Volley.newRequestQueue(this);
 
@@ -66,7 +96,6 @@ public class Listar_menuActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT);
 
                         toast1.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                        Log.i("ERROR", error.getMessage());
                         toast1.show();
                     }
 

@@ -9,28 +9,12 @@
     android:orientation="vertical"
     android:background="@color/blanco">
 
-    <TextView
-        android:id="@+id/titulo_lista"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Lista"
-        android:textSize="25dp"
-        android:layout_marginTop="@dimen/margen_15"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold|italic"/>
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:background="@color/negro"
-        />
-
     <ListView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mi_lista"
-        android:divider="@color/blanco"
-        android:dividerHeight="5dp"
+        android:divider="@color/fondo"
+        android:dividerHeight="8dp"
         android:layout_marginTop="@dimen/margin_reg_cli_20"/>
 
 </LinearLayout>

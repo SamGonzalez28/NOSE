@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margen_15"
+        android:layout_marginTop="80dp"
         android:singleLine="false"
         android:text="@string/RegMenu"
         android:textColor="@color/colorPrimary"
@@ -89,6 +92,20 @@
             android:layout_height="wrap_content">
 
             <AutoCompleteTextView
+                android:id="@+id/ed_descrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/descripcionMenu"
+                android:inputType="text"
+                android:layout_marginHorizontal="@dimen/margen_30"/>
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
                 android:id="@+id/ed_pecio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -101,20 +118,6 @@
 
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <AutoCompleteTextView
-                android:id="@+id/ed_descrip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:hint="@string/descripcionMenu"
-                android:inputType="text"
-                android:layout_marginHorizontal="@dimen/margen_30"/>
-
-        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_regMenu"
@@ -131,3 +134,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

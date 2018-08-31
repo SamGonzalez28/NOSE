@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="170dp"
+    android:background="@color/twinkleBlue">
+
+    <ImageView
+        android:id="@+id/img_tipo"
+        android:layout_width="@dimen/menu_100"
+        android:layout_height="@dimen/menu_100"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/margen_15"
+        android:layout_marginRight="@dimen/margen_15"
+        android:layout_marginTop="@dimen/margen_40"
+        android:src="@drawable/equipo" />
+
+    <TextView
+        android:id="@+id/txt_saldo_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margen_5"
+        android:layout_toRightOf="@id/img_menu"
+        android:gravity="right"
+        android:text="@string/precio"
+        android:textColor="@color/blanco"
+        android:textSize="@dimen/letra18"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txt_user_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margen_35"
+        android:layout_toRightOf="@id/img_tipo"
+        android:gravity="center_horizontal"
+        android:text="@string/user"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_nombres_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margin_login"
+        android:layout_toRightOf="@id/img_tipo"
+        android:text="@string/nombre"
+        android:textColor="@color/blueHorizon"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_apellidos_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="85dp"
+        android:layout_toRightOf="@id/img_tipo"
+        android:text="@string/apellidos"
+        android:textColor="@color/blueHorizon"
+        android:textSize="@dimen/letra18" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margen_5"
+        android:layout_marginRight="@dimen/margin_reg_cli_20"
+        android:gravity="right">
+
+
+       <!-- <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/margen_40"
+            android:layout_height="@dimen/margen_40"
+            android:layout_marginRight="@dimen/margen_10"
+            android:layout_marginTop="120dp"
+            android:src="@mipmap/ic_delete" />
+
+        <ImageButton
+            android:id="@+id/btn_edit"
+            android:layout_width="@dimen/margen_40"
+            android:layout_height="@dimen/margen_40"
+            android:layout_marginTop="120dp"
+            android:layout_toRightOf="@id/btn_delete"
+            android:src="@mipmap/ic_edit" /> -->
+    </RelativeLayout>
+
+</RelativeLayout>

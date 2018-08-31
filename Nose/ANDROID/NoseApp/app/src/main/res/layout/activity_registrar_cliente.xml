@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/blanco"
     android:theme="@style/AppTheme"
     android:orientation="vertical"
@@ -22,7 +27,7 @@
         android:layout_gravity="center"
         android:text="Registro de Cliente"
         android:textSize="25dp"
-        android:layout_marginTop="@dimen/margen_15"
+        android:layout_marginTop="60dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold|italic"/>
 
@@ -31,7 +36,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginHorizontal="@dimen/margen_30"
-        android:layout_marginTop="@dimen/margen_15"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="30dp"
         android:background="#f5f6fa">
 
 
@@ -115,6 +121,10 @@
             android:singleLine="true"
             android:layout_marginHorizontal="@dimen/margen_30"/>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
         <EditText
             android:id="@+id/txt_passwordCli"
             android:layout_width="match_parent"
@@ -127,7 +137,7 @@
             android:maxLines="1"
             android:singleLine="true"
             android:layout_marginHorizontal="@dimen/margen_30"/>
-
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_regCliente"
@@ -143,3 +153,4 @@
 
     </LinearLayout>
 </LinearLayout>
+</ScrollView>

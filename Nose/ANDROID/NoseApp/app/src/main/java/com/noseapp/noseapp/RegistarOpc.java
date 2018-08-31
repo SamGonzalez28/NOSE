@@ -24,6 +24,7 @@ public class RegistarOpc extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistarOpc.this, RegistrarLocal.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -32,6 +33,7 @@ public class RegistarOpc extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistarOpc.this, RegistrarCliente.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

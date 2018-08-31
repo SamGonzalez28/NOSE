@@ -10,7 +10,7 @@
     <string name="listaCli">Lista de Clientes</string>
     <string name="listaMenu">Lista de Menu</string>
     <string name="listaRegistros">Lista de Registros</string>
-    <string name="welcome">Bienvenido </string>
+    <string name="welcome">Welcome </string>
     <!-- Strings related to login -->
     <string name="prompt_email">Usuario</string>
     <string name="prompt_password">Contraseña</string>
@@ -46,15 +46,17 @@
     <string name="EntreDia">Entre dia</string>
     <string name="cant">Cantidad</string>
     <string name="total">Total</string>
-    <!--Menus-->
     <string name="descripcion">Esto es lo que lleva el plato</string>
     <string name="precio">Precio</string>
     <string name="title_activity_lista__menus">Menus</string>
     <string name="noseencontro">No se han encontrado menus</string>
     <!--Usuarios-->
     <string name="fecha">Fecha</string>
+    <string name="sin_cli">No se encontraron clientes</string>
+
 
     <string name="action_settings">Settings</string>
+    <string name="hola">Hola, </string>
     <string name="user">Nombre de Usuario</string>
     <string name="nombre">Nombres</string>
     <string name="apellidos">Apellidos</string>
@@ -66,4 +68,11 @@
     <!--Registros-->
     <string name="error_lis_re_cl">Error listar registros por Cliente</string>
     <string name="sin_regi">No se encontraron registros</string>
+    <string name="title_activity_admin__lateral"> </string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_cliente__lateral"> </string>
 </resources>

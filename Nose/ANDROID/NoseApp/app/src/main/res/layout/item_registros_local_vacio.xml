@@ -22,12 +22,72 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/margen_20"
-        android:layout_marginTop="@dimen/margen_40"
+        android:layout_marginTop="@dimen/margen_5"
         android:layout_toRightOf="@id/img_registros"
+        android:gravity="right"
         android:textColor="@color/royalBlue"
-        android:text="@string/sin_regi"
-        android:textSize="@dimen/letra18"
-        />
+        android:text="@string/fecha"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_nombres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margen_35"
+        android:layout_toRightOf="@id/img_registros"
+        android:text="@string/nombre"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_descripcion_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="@dimen/margin_login"
+        android:layout_toRightOf="@id/img_registros"
+        android:text="@string/descripcion"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_cant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="85dp"
+        android:layout_toRightOf="@id/img_registros"
+        android:text="@string/cant"
+        android:gravity="right"
+        android:textColor="@color/royalBlue"
+        android:textSize="@dimen/letra18" />
+
+    <TextView
+        android:id="@+id/txt_precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="110dp"
+        android:layout_toRightOf="@id/img_registros"
+        android:text="@string/precio"
+        android:gravity="right"
+        android:textColor="@color/royalBlue"
+        android:textSize="@dimen/letra18" />
+
+
+    <TextView
+        android:id="@+id/txt_valor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margen_20"
+        android:layout_marginTop="135dp"
+        android:layout_toRightOf="@id/img_registros"
+        android:text="@string/total"
+        android:gravity="center"
+        android:textColor="@color/royalBlue"
+        android:textSize="@dimen/letra18" />
+
+
+
 
 
 </RelativeLayout>

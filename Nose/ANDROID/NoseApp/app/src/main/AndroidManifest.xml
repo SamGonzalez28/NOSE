@@ -24,20 +24,33 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".Menu.OpcMenuLocal" />
         <activity android:name=".Menu.RegistrarMenu" />
         <activity android:name=".Cliente.RegistrarCliente" />
         <activity android:name=".Local.RegistrarLocal" />
-        <activity android:name=".Local.LocalActivity" />
-        <activity android:name=".RegistarOpc" />
+        <activity android:name=".Login.RegistarOpc" />
         <activity android:name=".LectorQR" />
         <activity android:name=".Welcome" />
         <activity android:name=".Cliente.perfil_cliente_Activity" />
         <activity android:name=".Cliente.ClienteActivity" />
         <activity android:name=".Local.GenerarQr" />
         <activity android:name=".Menu.Listar_menuActivity" />
-        <activity android:name=".Local.perfil_local_Activity"></activity>
-        <activity android:name=".Registros.Listar_registros_cliente"></activity>
+        <activity android:name=".Local.perfil_local_Activity" />
+        <activity android:name=".Registros.Listar_registros_cliente" />
+        <activity android:name=".Registros.Listar_registros_local" />
+        <activity
+            android:name=".Local.Admin_Lateral"
+            android:label="@string/title_activity_admin__lateral"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Local.ModificarPerfilLocalActivity" />
+        <activity android:name=".Cliente.ModificarPerfilClienteActivity" />
+        <activity android:name=".Cliente.Listar_cliente_localActivity" />
+        <activity
+            android:name=".Cliente.Cliente_Lateral"
+            android:label="@string/title_activity_cliente__lateral"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Menu.ListarMenuParaCliente" />
+        <activity android:name=".Menu.PerfilMenu" />
+        <activity android:name=".Menu.carrito"></activity>
     </application>
 
 </manifest>

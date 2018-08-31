@@ -47,6 +47,7 @@ public class RegistrarCliente extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 oyente();
+                btn_regCli.setEnabled(false);
             }
         });
     }
@@ -78,11 +79,13 @@ public class RegistrarCliente extends AppCompatActivity {
                         Toast.makeText(RegistrarCliente.this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegistrarCliente.this, LoginActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(RegistrarCliente.this, "NO SE REGISTRO", Toast.LENGTH_SHORT).show();
+                        btn_regCli.setEnabled(true);
                     }
                 }
         );

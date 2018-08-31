@@ -6,5 +6,7 @@ public class MenuJson {
     public String descripcion;
     public String id_local;
     public String precio;
+    public String external_id;
+    public String estado;
 
 }

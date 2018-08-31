@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Local.ModificarPerfilLocalActivity"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Modificar Local"
+        android:textSize="25dp"
+        android:layout_marginTop="@dimen/margen_15"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold|italic"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/margen_30"
+        android:layout_marginTop="@dimen/margen_15"
+        android:background="#f5f6fa">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/local" />
+        <TextView
+            android:id="@+id/txt_userlocalmod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/negro"
+            android:text="@string/user"
+            android:textSize="@dimen/letra18"/>
+
+        <EditText
+            android:id="@+id/nombreLmod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/letra22"
+            android:textColor="@color/RichGardenia"
+            android:layout_marginLeft="@dimen/margen_10"
+            android:layout_marginRight="@dimen/margen_10"
+            android:layout_marginTop="@dimen/margen_10"
+            android:hint="@string/nombre"/>
+
+        <EditText
+            android:id="@+id/rucLmod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_marginLeft="@dimen/margen_10"
+            android:layout_marginRight="@dimen/margen_10"
+            android:hint="@string/ruc"/>
+
+        <EditText
+            android:id="@+id/direccLmod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_marginLeft="@dimen/margen_10"
+            android:layout_marginRight="@dimen/margen_10"
+            android:hint="@string/direccion"/>
+
+        <EditText
+            android:id="@+id/tlfLmod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RichGardenia"
+            android:textSize="@dimen/letra22"
+            android:layout_marginLeft="@dimen/margen_10"
+            android:layout_marginRight="@dimen/margen_10"
+            android:layout_marginTop="0dp"
+            android:hint="@string/telefono"/>
+        <Button
+            android:id="@+id/btn_modLocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/margen_40"
+            android:background="@color/beniukonBronze"
+            android:text="Modificar"
+            android:layout_margin="@dimen/margen_30"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -3,7 +3,6 @@ package com.noseapp.noseapp.Login;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
-import com.noseapp.noseapp.RegistarOpc;
 import com.noseapp.noseapp.WS.ModelosJson.ClienteJson;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
@@ -44,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         ed_password = (EditText) findViewById(R.id.ed_password);
         ed_user = (EditText) findViewById(R.id.ed_user);
         btn_log = (Button) findViewById(R.id.btnlog);
-        txt_reg = (TextView) findViewById(R.id.txt_reg);
+        txt_reg = (TextView) findViewById(R.id.txt_opcregistrar);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         oyentes();
 
@@ -53,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegistarOpc.class);
                 startActivity(intent);
-
+                finish();
             }
         });
     }
@@ -90,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                     barra.setVisibility(View.GONE);
                                     Intent intent = new Intent(LoginActivity.this, Welcome.class);
                                     startActivity(intent);
+                                    finish();
                                 } else if (response == null) {
                                     logClient();
                                 }
@@ -103,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                 );
                 requestQueue.add(inicio);
-
+                btn_log.setEnabled(false);
             }
         });
     }
@@ -129,8 +128,11 @@ public class LoginActivity extends AppCompatActivity {
                             barra.setVisibility(View.GONE);
                             Intent intent = new Intent(LoginActivity.this, Welcome.class);
                             startActivity(intent);
+                            finish();
                         } else {
-                            Toast.makeText(LoginActivity.this, "Datos Invalidos VERIFIQUELOS PORFAVOR", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Datos Invalidos VERIFIQUELOS POR FAVOR", Toast.LENGTH_SHORT).show();
+                            barra.setVisibility(View.GONE);
+                            btn_log.setEnabled(true);
                         }
                     }
                 }, new Response.ErrorListener() {

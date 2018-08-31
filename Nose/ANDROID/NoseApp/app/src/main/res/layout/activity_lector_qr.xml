@@ -9,18 +9,9 @@
     android:layout_marginHorizontal="@dimen/margen_40"
     android:layout_marginTop="@dimen/menu_100"
     android:background="#f5f6fa">
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edCodigo"
-        android:hint="Codigo QR"/>
-
-    <Button
-        android:id="@+id/btn_Escanear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Escanear"
-        android:layout_gravity="center"
-        android:text="ESCANEAR"
-        android:layout_marginTop="@dimen/margen_40"/>
+        android:textColor="@color/blanco"/>
 </LinearLayout>
