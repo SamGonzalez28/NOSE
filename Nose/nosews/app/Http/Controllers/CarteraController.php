@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 namespace App\Http\Controllers;
 
@@ -15,17 +10,23 @@ use Illuminate\Http\Request;
 
 /**
  * Description of CarteraController
- *
+ * Clase usada para Controlar las funciones de Cartera
  * @author alejo
  */
 class CarteraController extends Controller {
     
+    /**
+    *	Constructor para los metodos que necesitan autenticacion
+    **/
     function __construct() {
         $this->middleware('auth', ['only' => [
                 'listar','modificar'
         ]]);
     }
-
+    
+    /**
+    *	Funcion para registrar cartera	
+    **/
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
@@ -34,8 +35,8 @@ class CarteraController extends Controller {
                 $local = \App\Models\Local::where("external_id", $data["local"])->first();
                 if ($cliente == true && $local == true) {
                     $cartera = new Cartera();
-                    $cartera->local()->associate($local);
-                    $cartera->cliente()->associate($cliente);
+                    $cartera->Local()->associate($local);
+                    $cartera->Cliente()->associate($cliente);
                     $cartera->external_id = utilidades\UUID::v4();
                     $cartera->saldo = $data["saldo"];
                     $cartera->save();
@@ -50,7 +51,10 @@ class CarteraController extends Controller {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
         }
     }
-
+    
+    /**
+    *	Funcion para modificar cartera	
+    **/
     public function modificar(Request $request, $external_id) {//el request es solo para post, get y put
         $carObj = Cartera::where("external_id", $external_id)->first(); //busca el registro por el primer external_id
 
@@ -71,7 +75,10 @@ class CarteraController extends Controller {
             return response()->json(["mensaje" => "No registros", "siglas" => "NR"], 203);
         }
     }
-
+    
+    /**
+    *	Funcion para listar cartera	
+    */
     public function Listar() {
         $lista = Cartera::orderBy('id_local')->get();
         $data = array();

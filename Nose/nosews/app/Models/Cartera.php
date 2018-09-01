@@ -1,16 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 namespace App\Models;
-
 /**
  * Description of Cartera
- *
+ * Esta clase es Utlizada para realizar la conxeion de
+ * la tabla cartera en la base de datos, con el Web Service
  * @author sam
  */
 
@@ -21,7 +16,7 @@ class Cartera extends Model{
     
     protected $table ='cartera';
     
-    public $timestamps = false;//porque no tengo 
+    public $timestamps = false; 
     //lista blanca
     protected $fillable =['id_local','id_cliente','saldo'];
     //lista negra

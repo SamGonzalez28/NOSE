@@ -1,6 +1,13 @@
 <?php
 
 namespace App\Models;
+/**
+ * Description of CLiente
+ * Esta clase es Utlizada para realizar la conexion de
+ * la tabla cliente en la base de datos, con el Web Service
+ *
+ * @author sam
+ */
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,7 +15,7 @@ class Cliente extends Model{
     
     protected $table ='cliente';
     
-    public $timestamps = false;//porque no tengo 
+    public $timestamps = false;
     //lista blanca
     protected $fillable =['nombres','apellidos','ci','telefono','direccion','external_id','correo','user','clave','estado'];
     //lista negra

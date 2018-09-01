@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Http\Controllers;
 
 use App\Models\Local;
@@ -13,13 +7,20 @@ use Illuminate\Http\Request;
 
 /**
  * Description of LocalController
- *
+ * Clase usada para controlar las funciones que se aplican a la tabla local
  * @author AlejandroC
  */
 class LocalController extends Controller {
 
+     /**
+     *Variable que guarda el external id, que reciben las funciones que aqui se usan 
+     * @var type 
+     */
     private $external_id;
 
+    /**
+     * Constructor para controlar que funciones necesitan autenticacion
+     */
     function __construct() {
         $this->middleware('auth', ['only' =>
             [
@@ -28,6 +29,11 @@ class LocalController extends Controller {
         ]);
     }
 
+    /**
+     * Funcion que se encarga de registrar un Local
+     * @param Request $request
+     * @return type
+     */
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
@@ -45,12 +51,18 @@ class LocalController extends Controller {
                 return response()->json(["mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } catch (Exception $ex) {
                 return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
+                echo "Faltan Datos";
             }
         } else {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
         }
     }
-
+    
+    /**
+     * Funcion para que local inicie sesion
+     * @param Request $request
+     * @return type
+     */
     public function inicioSesion(Request $request) {
 
         try {
@@ -60,7 +72,7 @@ class LocalController extends Controller {
             if ($local) {
                 return response()->json([
                             "nombre" => $local->nombre,
-                            "id" => $local->external_id,
+                            "external_id" => $local->external_id,
                             "token" => base64_encode($local->external_id . '--' . $local->nombre),
                             "mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } else {
@@ -70,7 +82,13 @@ class LocalController extends Controller {
             return response()->json(["mensaje" => "Faltan Datos", "siglas" => "FD"], 400);
         }
     }
-
+    
+    /**
+     * Funcion para modificar los datos de local
+     * @param Request $request
+     * @param type $external_id el external de local que se va a modificar
+     * @return type
+     */
     public function modificar(Request $request, $external_id) {
         $localObjeto = Local::where("external_id", $external_id)->first();
         if ($localObjeto) {
@@ -98,6 +116,12 @@ class LocalController extends Controller {
         }
     }
 
+    /**
+     * Funcion para eliminar de manera logica, un perfil de local
+     * @param Request $request
+     * @param type $external_id del local que se va a eliminar
+     * @return type
+     */
     public function eliminar(Request $request, $external_id) {
         $localObjeto = Local::where("external_id", $external_id)->first();
         if ($localObjeto) {
@@ -121,16 +145,39 @@ class LocalController extends Controller {
         }
     }
 
+    /**
+     * Funcion para listar todos los locales con perfil activo(que no haya sido eliminado)
+     * @return type
+     */
     public function Listar() {
-        $lista = Local::orderBy('nombre')->get();
+        $lista = Local::where('estado','=','1')->orderBy('nombre')->get();
         $data = array();
 
         foreach ($lista as $value) {
 
-            $data[] = ["nombre" => $value->nombre, "RUC" => $value->ruc, "direccion" => $value->direccion,
-                "telefono" => $value->telefono];
+            $data[] = ["nombre" => $value->nombre, "ruc" => $value->ruc, "direccion" => $value->direccion,
+                "telefono" => $value->telefono, "external_id"=>$value->external_id];
         }
         return $data;
+    }
+    
+    /**
+     * Funcion para ver los datos del local que ha iniciado sesion
+     * @param type $external_id del cliente que inicio sesion
+     * @return type
+     */ 
+    public function ver($external_id) {
+        $local = Local::where("external_id", $external_id)->get();
+        $data = array();
+        
+          
+            foreach ($local as $value) {
+                $data[] = ["nombre" => $value->nombre, "ruc" => $value->ruc, "direccion" => $value->direccion,
+                "telefono" => $value->telefono];
+            }
+            return $data;
+        
+        
     }
 
 }

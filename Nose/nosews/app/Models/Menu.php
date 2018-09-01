@@ -1,14 +1,20 @@
 <?php
 
 namespace App\Models;
-
+/**
+ * Description of Menu
+ * Esta clase es Utlizada para realizar la conexion de
+ * la tabla menu en la base de datos, con el Web Service
+ *
+ * @author sam
+ */
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model{
     
     protected $table ='menu';
     
-    public $timestamps = true;//porque tengo 
+    public $timestamps = true;
     //lista blanca
     protected $fillable =['tipo','precio','descripcion','id_local','external_id', 'updated_at', 'created_at'];
     //lista negra

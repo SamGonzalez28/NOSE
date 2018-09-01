@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
@@ -13,19 +6,24 @@ use Illuminate\Http\Request;
 
 /**
  * Description of ClienteController
+ * Clase usada para controlar las funciones que se aplican a la tabla cliente
  *
  * @author AlejandroC
  */
 class ClienteController extends Controller {
 
+    /**
+     *Variable que guarda el external id, que reciben las funciones que aqui se usan 
+     * @var type 
+     */
     private $external_id;
 
-    function __construct() {
-        $this->middleware('auth', ['only' => [
-                'modificar','listar'
-        ]]);
-    }
 
+    /**
+     * Funcion que se encarga de registrar un Cliente
+     * @param Request $request
+     * @return type
+     */
     public function registrar(Request $request) {
         if ($request->isJson()) {
             $data = $request->json()->all();
@@ -51,7 +49,12 @@ class ClienteController extends Controller {
             return response()->json(["mensaje" => "La data no tiene el formato deseado", "siglas" => "DNF"], 404);
         }
     }
-
+    
+    /**
+     * Funcion para que cliente inicie sesion
+     * @param Request $request
+     * @return type
+     */
     public function inicioSesion(Request $request) {
 
         try {
@@ -62,8 +65,8 @@ class ClienteController extends Controller {
 
             if ($cliente) {
                 return response()->json(["user" => $cliente->user,
-                            "id" => $cliente->external_id,
-                            "nombre" => $cliente->nombres,
+                            "external_id" => $cliente->external_id,
+                            "nombres" => $cliente->nombres,
                             "token" => base64_encode($cliente->external_id . '--' . $cliente->user),
                             "mensaje" => "Operacion exitosa", "siglas" => "OE"], 200);
             } else {
@@ -74,6 +77,12 @@ class ClienteController extends Controller {
         }
     }
 
+    /**
+     * Funcion para modificar los datos de cliente
+     * @param Request $request
+     * @param type $external_id el external de cliente que se va a modificar
+     * @return type
+     */
     public function modificar(Request $request, $external_id) {
         $clienteObjeto = Cliente::where("external_id", $external_id)->first();
         if ($clienteObjeto) {
@@ -107,6 +116,12 @@ class ClienteController extends Controller {
         }
     }
 
+    /**
+     * Funcion para eliminar de manera logica, un perfil de cliente
+     * @param Request $request
+     * @param type $external_id del cliente que se va a eliminar
+     * @return type
+     */
     public function eliminar(Request $request, $external_id) {
         $clientObjeto = Cliente::where("external_id", $external_id)->first();
         if ($clientObjeto) {
@@ -124,11 +139,32 @@ class ClienteController extends Controller {
             return response()->json(["mensaje" => "No se encontro ningun dato", "siglas" => "NDE"], 204);
         }
     }
-
+    
+    /**
+     * Funcion para listar todos los clientes con perfil activo(que no haya sido eliminado)
+     * @return type
+     */
     public function Listar() {
-        $lista = Cliente::orderBy('nombres')->get();
+        $lista = Cliente::where('estado','=','1')->orderBy('nombres')->get();
         $data = array();
 
+        foreach ($lista as $value) {
+
+            $data[] = ["nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci,
+                "correo" => $value->correo, "direccion" => $value->direccion, "telefono" => $value->telefono,
+                "user" => $value->user];
+        }
+        return $data;
+    }
+    
+    /**
+     * Funcion para ver los datos del cliente que ha iniciado sesion
+     * @param type $external_id del cliente que inicio sesion
+     * @return type
+     */
+    public function ver($external_id) {
+        $lista = Cliente::where("external_id", $external_id)->get();
+        $data = array();
         foreach ($lista as $value) {
 
             $data[] = ["nombres" => $value->nombres, "apellidos" => $value->apellidos, "ci" => $value->ci,

@@ -1,6 +1,13 @@
 <?php
 
 namespace App\Models;
+/**
+ * Description of Sesion
+ * Esta clase es Utlizada para realizar la conexion de
+ * la tabla asociar en la base de datos, con el Web Service
+ *
+ * @author sam
+ */
 
 use Illuminate\Database\Eloquent\Model;
 
