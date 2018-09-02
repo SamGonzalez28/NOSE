@@ -28,7 +28,7 @@ public class Conexion {
      * @param id               external id que se concatena a la url
      * @param responseListener en caso de que la conexion sea satisfactoria
      * @param errorListener    en caso de que la conexion no sea satisfactoria
-     * @return un objeto de la clase Volley Peticion
+     * @return                 un objeto de la clase Volley Peticion
      */
     public static VolleyPeticion<MenuJson[]> getListaMenuAdmin(
             @NonNull final Context context,
@@ -120,7 +120,7 @@ public class Conexion {
     }
 
     /**
-     * Metodo para recuperar del servicio web la lista de menus por cliente
+     * Metodo para recuperar del servicio web la lista de registros por cliente
      *
      * @param context          contexto actual
      * @param token            la autentificacion de logeo
@@ -223,7 +223,7 @@ public class Conexion {
      * @param mapa             para generar un objeto clave-valor
      * @param responseListener en caso de que la conexion sea satisfactoria
      * @param errorListener    en caso de que la conexion no sea satisfactoria
-     * @return un objeto de la clase Volley Peticion
+     * @return                 un objeto de la clase Volley Peticion
      */
     public static VolleyPeticion<ClienteJson> inciarSesionClient(
             @NonNull final Context context,
@@ -246,6 +246,14 @@ public class Conexion {
         return request;
     }
 
+    /**
+     * Metodo para recuperar del Web Service el registro de Local
+     * @param context           contexto actual
+     * @param mapa              para generar un objeto clave-valor
+     * @param responseListener  en caso de que la conexion sea satisfactoria
+     * @param errorListener     en caso de que la conexion no sea satisfactoria
+     * @return                  un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<LocalJson> registroLocal(
             @NonNull final Context context,
             @NonNull final HashMap mapa,
@@ -269,7 +277,14 @@ public class Conexion {
         }
     }
 
-
+    /**
+     * Metodo para recuperar del Web Service el registro de cliente
+     * @param context           contexto actual
+     * @param mapa              para generar un objeto clave-valor
+     * @param responseListener  en caso de que la conexion sea satisfactoria
+     * @param errorListener     en caso de que la conexion no sea satisfactoria
+     * @return                  un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<ClienteJson> registroCliente(
             @NonNull final Context context,
             @NonNull final HashMap mapa,
@@ -293,7 +308,14 @@ public class Conexion {
         }
     }
 
-
+    /**
+     * Metodo para recuperar del Web Service el registro de menu
+     * @param context           contexto actual
+     * @param mapa              para generar un objeto clave-valor
+     * @param responseListener  en caso de que la conexion sea satisfactoria
+     * @param errorListener     en caso de que la conexion no sea satisfactoria
+     * @return                  un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<MenuJson> registroMenu(
             @NonNull final Context context,
             @NonNull HashMap<String, String> mapa,
@@ -315,6 +337,16 @@ public class Conexion {
         }
     }
 
+    /**
+     * Metodo para recuperar del Web Service el modificar de local
+     * @param context               contexto actual
+     * @param id                    el external_id que hace referencia a que se va a modificar
+     * @param token                 el token para autentificarse y acceder al metodo
+     * @param mapa                  para generar un objeto clave-valor
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<LocalJson> modificarLocal(
             @NonNull final Context context,
             @NonNull final String id,
@@ -342,7 +374,16 @@ public class Conexion {
             return request;
         }
     }
-
+    /**
+     * Metodo para recuperar del Web Service el modificar de cliente
+     * @param context               contexto actual
+     * @param id                    el external_id que hace referencia a que se va a modificar
+     * @param token                 el token para autentificarse y acceder al metodo
+     * @param mapa                  para generar un objeto clave-valor
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<ClienteJson> modificarCli(
             @NonNull final Context context,
             @NonNull final String id,
@@ -371,60 +412,15 @@ public class Conexion {
         }
     }
 
-
-    public static VolleyPeticion<ClienteJson[]> verCliente(
-            @NonNull final Context context,
-            @NonNull final String external_id,
-            @NonNull Response.Listener<ClienteJson[]> responseListener,
-            @NonNull Response.ErrorListener errorListener
-    ) {
-        final String url = index_url + "/cliente/ver/" + external_id;
-        VolleyPeticion lista = new VolleyPeticion(
-                context,
-                Request.Method.GET,
-                url,
-                responseListener,
-                errorListener);
-        lista.setResponseClass(ClienteJson[].class);
-        return lista;
-    }
-
-
-    public static VolleyPeticion<LocalJson[]> verLocal(
-            @NonNull final Context context,
-            @NonNull final String external_id,
-            @NonNull Response.Listener<LocalJson[]> responseListener,
-            @NonNull Response.ErrorListener errorListener
-    ) {
-        final String url = index_url + "/comer/ver/" + external_id;
-        VolleyPeticion lista = new VolleyPeticion(
-                context,
-                Request.Method.GET,
-                url,
-                responseListener,
-                errorListener);
-        lista.setResponseClass(LocalJson[].class);
-        return lista;
-    }
-
-    public static VolleyPeticion<MenuJson[]> verMenu(
-            @NonNull final Context context,
-            @NonNull final String external_id,
-            @NonNull Response.Listener<MenuJson[]> responseListener,
-            @NonNull Response.ErrorListener errorListener
-    ) {
-        final String url = index_url + "/comida/ver/" + external_id;
-        VolleyPeticion lista = new VolleyPeticion(
-                context,
-                Request.Method.GET,
-                url,
-                responseListener,
-                errorListener);
-        lista.setResponseClass(MenuJson[].class);
-        return lista;
-    }
-
-
+    /**
+     * Metodo para recuperar del Web Service el modificar de menu
+     * @param context               contexto actual
+     * @param id                    el external_id que hace referencia a que se va a modificar
+     * @param mapa                  para generar un objeto clave-valor
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<MenuJson> modificarMenu(
             @NonNull final Context context,
             @NonNull final String id,
@@ -446,6 +442,91 @@ public class Conexion {
         return request;
     }
 
+    /**
+     *  Metodo para recuperar del Web Service el ver de cliente
+     * @param context               contexto actual
+     * @param external_id           el external_id que hace referencia a que se va a visualizar
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
+    public static VolleyPeticion<ClienteJson[]> verCliente(
+            @NonNull final Context context,
+            @NonNull final String external_id,
+            @NonNull Response.Listener<ClienteJson[]> responseListener,
+            @NonNull Response.ErrorListener errorListener
+    ) {
+        final String url = index_url + "/cliente/ver/" + external_id;
+        VolleyPeticion lista = new VolleyPeticion(
+                context,
+                Request.Method.GET,
+                url,
+                responseListener,
+                errorListener);
+        lista.setResponseClass(ClienteJson[].class);
+        return lista;
+    }
+
+    /**
+     *  Metodo para recuperar del Web Service el ver de local
+     * @param context               contexto actual
+     * @param external_id           el external_id que hace referencia a que se va a visualizar
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
+    public static VolleyPeticion<LocalJson[]> verLocal(
+            @NonNull final Context context,
+            @NonNull final String external_id,
+            @NonNull Response.Listener<LocalJson[]> responseListener,
+            @NonNull Response.ErrorListener errorListener
+    ) {
+        final String url = index_url + "/comer/ver/" + external_id;
+        VolleyPeticion lista = new VolleyPeticion(
+                context,
+                Request.Method.GET,
+                url,
+                responseListener,
+                errorListener);
+        lista.setResponseClass(LocalJson[].class);
+        return lista;
+    }
+
+    /**
+     *  Metodo para recuperar del Web Service el ver de menu
+     * @param context               contexto actual
+     * @param external_id           el external_id que hace referencia a que se va a visualizar
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
+    public static VolleyPeticion<MenuJson[]> verMenu(
+            @NonNull final Context context,
+            @NonNull final String external_id,
+            @NonNull Response.Listener<MenuJson[]> responseListener,
+            @NonNull Response.ErrorListener errorListener
+    ) {
+        final String url = index_url + "/comida/ver/" + external_id;
+        VolleyPeticion lista = new VolleyPeticion(
+                context,
+                Request.Method.GET,
+                url,
+                responseListener,
+                errorListener);
+        lista.setResponseClass(MenuJson[].class);
+        return lista;
+    }
+
+
+    /**
+     * Metodo para recuperar del Web Service el eliminar de menu
+     * @param context               contexto actual
+     * @param id                    el external_id que hace referencia a que se va a eliminar
+     * @param mapa                  para generar un objeto clave-valor
+     * @param responseListener      en caso de que la conexion sea satisfactoria
+     * @param errorListener         en caso de que la conexion no sea satisfactoria
+     * @return                      un objeto de la clase Volley Peticion
+     */
     public static VolleyPeticion<MenuJson> eliminarMenu(
             @NonNull final Context context,
             @NonNull final String id,

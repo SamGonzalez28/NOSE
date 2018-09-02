@@ -23,6 +23,11 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
 
+/**
+ * Esta actividad presenta el perfil de local
+ * y da la opcion de modificar los satos
+ * luego de ingresar la contraseña registrada
+ */
 public class ModificarPerfilLocalActivity extends AppCompatActivity {
 
     /**

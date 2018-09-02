@@ -14,7 +14,9 @@ import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.ModelosJson.ClienteJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
-
+/**
+ * Esta actividad permite visualizar todos los datos de el cliente logeado
+ */
 
 public class perfil_cliente_Activity extends AppCompatActivity {
 

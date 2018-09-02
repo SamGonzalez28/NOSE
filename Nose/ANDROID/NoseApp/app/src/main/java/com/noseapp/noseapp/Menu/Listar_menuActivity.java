@@ -1,11 +1,15 @@
 package com.noseapp.noseapp.Menu;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -15,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.noseapp.noseapp.InicioActivity;
+import com.noseapp.noseapp.Local.Admin_Lateral;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.Adaptador.ListadeMenusAdap;
 import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
@@ -23,6 +28,11 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
 
+/**
+ * Actividad encargada de listar menus,
+ * ademas de tener opcion de eliminar y modificar
+ * contiene un boton flotante para añadir uno nuevo
+ */
 public class Listar_menuActivity extends AppCompatActivity {
 
     private ListView mi_lista;
@@ -71,10 +81,6 @@ public class Listar_menuActivity extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        oyente();
-    }
-
-    private void oyente() {
         VolleyPeticion<MenuJson[]> menus = Conexion.getListaMenuAdmin(
                 getApplicationContext(),
                 InicioActivity.TOKEN,
@@ -103,4 +109,6 @@ public class Listar_menuActivity extends AppCompatActivity {
         );
         queue.add(menus);
     }
+
+
 }

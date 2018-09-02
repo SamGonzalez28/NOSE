@@ -19,7 +19,11 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
-
+/**
+ * Esta actividad presenta el perfil de cliente
+ * y da la opcion de modificar los satos
+ * luego de ingresar la contraseña registrada
+ */
 public class ModificarPerfilClienteActivity extends AppCompatActivity {
 
     EditText nombres, apellidos, ci, correo, domicilio, tele, user, pass;

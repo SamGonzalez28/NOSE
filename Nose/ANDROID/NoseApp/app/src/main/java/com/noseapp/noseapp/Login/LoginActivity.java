@@ -26,6 +26,10 @@ import com.noseapp.noseapp.Welcome;
 
 import java.util.HashMap;
 
+/**
+ * Esta actividad se encarga de controlar el inicio de sesion tanto de cliente como de local
+ * redirige a la opcion de registrarse, tanto como cliente como de local
+ */
 public class LoginActivity extends AppCompatActivity {
     private EditText ed_password, ed_user;
     private Button btn_log;

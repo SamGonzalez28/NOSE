@@ -9,7 +9,9 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 import com.noseapp.noseapp.WS.Volley.VolleyProcesadordeResultado;
 import com.noseapp.noseapp.utilidades.util;
 
-
+/**
+ * Lista utilizable de todos los posibles errores
+ */
 public class VolleyTiposdeError implements Parcelable {
     public String errorCode = ERR_UNKNOWN;
     public String errorTitle = "";

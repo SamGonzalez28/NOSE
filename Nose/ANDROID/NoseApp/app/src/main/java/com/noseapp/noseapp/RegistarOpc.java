@@ -9,6 +9,10 @@ import android.widget.ImageButton;
 import com.noseapp.noseapp.Cliente.RegistrarCliente;
 import com.noseapp.noseapp.Local.RegistrarLocal;
 
+/**
+ * Clase Usada para que el usuario elija la opcion de registrarse como
+ * Local o como Ciente
+ */
 public class RegistarOpc extends AppCompatActivity {
 
     @Override

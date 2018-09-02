@@ -18,6 +18,10 @@ import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.Save;
 
+/**
+ * Esta actividad genera un codigo QR correspondiente al external de local
+ * que sera usada por el cliente para acceder a dicho local
+ */
 public class GenerarQr extends AppCompatActivity {
 
 

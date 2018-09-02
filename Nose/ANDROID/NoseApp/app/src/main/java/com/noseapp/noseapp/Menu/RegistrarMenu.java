@@ -26,6 +26,10 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
 
+/**
+ * Esta actividad se encarga de registrar un nuevo menu, siendo llamada desde el boton flotante
+ * de listar_menuActivity
+ */
 public class RegistrarMenu extends AppCompatActivity {
     EditText precio, descripcion;
     RadioButton desayuno, almuerzo, cena, entredia, lunch;

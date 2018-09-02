@@ -24,7 +24,10 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
 
-
+/**
+ * Esta actividad se encarga de presentar los datos de un perfil seleccionado
+ * a demas de dar la opcion de eliminarlo y modificarlo
+ */
 public class PerfilMenu extends AppCompatActivity {
 
     EditText precio, descripcion;

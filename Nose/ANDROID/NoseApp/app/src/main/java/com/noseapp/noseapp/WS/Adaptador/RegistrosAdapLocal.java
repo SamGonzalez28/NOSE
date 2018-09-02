@@ -13,7 +13,10 @@ import com.noseapp.noseapp.WS.ModelosJson.RegistrosJson;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Clase que adapta el contenido de una consulta para que pueda ser presentado
+ * Consulta del modelo RegistrosJson cuando se lista por local
+ */
 public class RegistrosAdapLocal extends ArrayAdapter<RegistrosJson> {
 
     private List<RegistrosJson> datalista;

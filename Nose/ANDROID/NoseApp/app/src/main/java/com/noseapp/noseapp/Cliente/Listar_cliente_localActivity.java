@@ -24,6 +24,9 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
 
+/**
+ * Esta actividad permite listar todos los clientes de un local
+ */
 public class Listar_cliente_localActivity extends AppCompatActivity {
 
     private ListView mi_lista;

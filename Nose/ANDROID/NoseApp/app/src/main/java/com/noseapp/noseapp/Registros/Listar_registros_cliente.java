@@ -23,6 +23,9 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
 
+/**
+ * Actividad encargada de presentar una lista con los registros de clientes
+ */
 public class Listar_registros_cliente extends AppCompatActivity {
 
     private ListView mi_lista;
@@ -43,10 +46,6 @@ public class Listar_registros_cliente extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        oyente();
-
-    }
-    private void oyente() {
         VolleyPeticion<RegistrosJson[]> registros = Conexion.getListaRegistrosClientes(
                 getApplicationContext(),
                 InicioActivity.TOKEN,
@@ -77,5 +76,7 @@ public class Listar_registros_cliente extends AppCompatActivity {
                 }
         );
         queue.add(registros);
+
     }
+
 }

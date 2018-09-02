@@ -10,6 +10,9 @@ import com.noseapp.noseapp.Cliente.ClienteActivity;
 import com.noseapp.noseapp.Cliente.Cliente_Lateral;
 import com.noseapp.noseapp.Local.Admin_Lateral;
 
+/**
+ * Actividad que discierne si el usuario logeado es un local o un cliente
+ */
 public class Welcome extends AppCompatActivity {
 
     private final int splash = 2000;

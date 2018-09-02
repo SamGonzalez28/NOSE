@@ -1,5 +1,8 @@
 package com.noseapp.noseapp.WS.ModelosJson;
-
+/**
+ * Esta clase modela, los parametros que se reciben de el web services al realizar
+ * una consulta de menus
+ */
 public class MenuJson {
 
     public String tipo;

@@ -14,6 +14,11 @@ import com.noseapp.noseapp.WS.ModelosJson.AsociarClienteJson;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que adapta el contenido de una consulta para que pueda ser presentado
+ * Consulta del modelo AsociarClienteJson
+ * Los clientes que pertenecen a un local
+ */
 public class ListadeAsociarCLientesAdap extends ArrayAdapter<AsociarClienteJson> {
 
     private List<AsociarClienteJson> datalista;

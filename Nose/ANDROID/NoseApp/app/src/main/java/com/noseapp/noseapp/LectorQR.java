@@ -15,6 +15,9 @@ import com.noseapp.noseapp.Registros.Listar_registros_cliente;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
+/**
+ * Clase utilizada para Leer el QR
+ */
 public class LectorQR extends AppCompatActivity {
     TextView codigo;
     private ZXingScannerView vistaescaner;

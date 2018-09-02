@@ -17,7 +17,10 @@ import com.noseapp.noseapp.LectorQR;
 import com.noseapp.noseapp.Login.LoginActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.Registros.Listar_registros_cliente;
-
+/**
+ * Esta actividad se encarga de el control y redireccion de las opciones que contiene
+ * la barra lateral de Cliente
+ */
 public class Cliente_Lateral extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

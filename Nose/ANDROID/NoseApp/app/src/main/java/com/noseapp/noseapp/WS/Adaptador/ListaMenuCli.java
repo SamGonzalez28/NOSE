@@ -14,7 +14,10 @@ import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Clase que adapta el contenido de una consulta para que pueda ser presentado
+ * Consulta del modelo MenuJson cuando se lista por Cliente
+ */
 public class ListaMenuCli extends ArrayAdapter<MenuJson> {
     private List<MenuJson> datalista;
     Context mContext;

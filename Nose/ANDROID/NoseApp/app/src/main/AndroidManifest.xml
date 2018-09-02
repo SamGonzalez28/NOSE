@@ -49,8 +49,7 @@
             android:label="@string/title_activity_cliente__lateral"
             android:theme="@style/AppTheme" />
         <activity android:name=".Menu.ListarMenuParaCliente" />
-        <activity android:name=".Menu.PerfilMenu" />
-        <activity android:name=".Menu.carrito"></activity>
+        <activity android:name=".Menu.PerfilMenu"></activity>
     </application>
 
 </manifest>

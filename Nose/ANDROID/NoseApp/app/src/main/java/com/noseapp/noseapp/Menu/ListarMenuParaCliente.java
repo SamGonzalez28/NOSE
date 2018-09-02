@@ -25,6 +25,10 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Actividad encargada de listar menus,
+ * para que el cliente pueda elegir de entre los menus del local
+ */
 public class ListarMenuParaCliente extends AppCompatActivity {
 
     private ListView mi_lista;

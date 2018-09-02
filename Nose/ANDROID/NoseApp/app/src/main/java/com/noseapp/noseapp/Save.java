@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ * Clase usada para almacenar la imagen con el QR de local en la galeria
+ * interna del telefono del usuario registrado como local
+ */
 public class Save {
     Context TheThis;
     private String NameOfFolder = "/CODIGO";

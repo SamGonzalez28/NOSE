@@ -3,7 +3,6 @@ package com.noseapp.noseapp;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Camera;
 import android.os.Handler;
@@ -13,25 +12,34 @@ import android.os.Bundle;
 
 
 import com.noseapp.noseapp.Login.LoginActivity;
-import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
 
-import java.util.ArrayList;
-
+/**
+ *  Esta clase controla la pantalla de inicio de la aplicacion
+ *  e inicializa las variables de sesion staticas que se
+ *  usaran posteriormente
+ */
 
 public class InicioActivity extends AppCompatActivity {
 
+    /**
+     * Variable que define el tiempo que tarda la actividad de inicio en espera
+     */
     private final int splash = 5000;
 
+    /**
+     * Variables estaticas que almacenan datos que se usaran posteriormente
+     */
     public static String TOKEN = "";
     public static String ID_EXTERNAL = "";
     public static String ID_EXTERNAL_QR = "";
     public static String NOMBRE_WELCOME = "";
     public static String TIPO = "";
     public static String itemListaLocal;
-    public static ArrayList<String> carrito = new ArrayList<>();
-    public static final String user = "";
-    public static final String password = "";
 
+    /**
+     * Contiene todo lo que que ocurre al iniciarse la actividad
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,9 +79,5 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
 
-    public void guardarDatosLogin(){
-        SharedPreferences preferences = getSharedPreferences(user,MODE_PRIVATE);
-
-    }
 
 }

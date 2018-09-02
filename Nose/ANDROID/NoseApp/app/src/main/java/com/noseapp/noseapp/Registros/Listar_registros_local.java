@@ -24,6 +24,9 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
 
+/**
+ * Actividad encargada de presentar una lista con los registros de locales
+ */
 public class Listar_registros_local extends AppCompatActivity {
 
     private ListView mi_lista;
@@ -47,10 +50,6 @@ public class Listar_registros_local extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
-        oyente();
-
-    }
-    private void oyente() {
         VolleyPeticion<RegistrosJson[]> registros = Conexion.getListaRegistrosAdmin(
                 getApplicationContext(),
                 InicioActivity.TOKEN,
@@ -59,6 +58,7 @@ public class Listar_registros_local extends AppCompatActivity {
                 new Response.Listener<RegistrosJson[]>() {
                     @Override
                     public void onResponse(RegistrosJson[] response) {
+
                         listadeRegistrosAdap = new RegistrosAdapLocal(Arrays.asList(response),getApplicationContext());
                         mi_lista.setAdapter(listadeRegistrosAdap);
                     }
@@ -80,5 +80,7 @@ public class Listar_registros_local extends AppCompatActivity {
                 }
         );
         queue.add(registros);
+
     }
+
 }

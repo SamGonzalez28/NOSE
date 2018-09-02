@@ -21,6 +21,10 @@ import com.noseapp.noseapp.Menu.Listar_menuActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.Registros.Listar_registros_local;
 
+/**
+ * Esta actividad se encarga de el control y redireccion de las opciones que contiene
+ * la barra lateral de Local
+ */
 public class Admin_Lateral extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

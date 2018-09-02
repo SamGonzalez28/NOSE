@@ -19,7 +19,9 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
-
+/**
+ * Esta actividad permite registrar un cliente
+ */
 public class RegistrarCliente extends AppCompatActivity {
 
     private EditText txt_nombresCli, txt_apellidosCli, txt_cedulaCli, txt_emailCli,

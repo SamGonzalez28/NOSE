@@ -21,6 +21,10 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 
+/**
+ * Procesa los posibles resultados que puede devolver una peticion
+ * @param <T>
+ */
 
 public final class VolleyProcesadordeResultado<T> {
 
