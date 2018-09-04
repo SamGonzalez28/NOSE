@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "998929121411-6i0d5b1r0gme77re8rnb0rhs2eks528t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.noseapp.noseapp",
+            "certificate_hash": "d7e4e485ff84b023971f562f3901ce13ff6356aa"
+          }
+        },
+        {
           "client_id": "998929121411-2slpejpcm29v3iss5c9btdsa9gcgg6b9.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -92,6 +92,7 @@ public class RegistrarMenu extends AppCompatActivity {
         Log.i("accion", menu);
         if (menu.trim().isEmpty()) {
             Toast.makeText(getApplicationContext(), "SELECCIONE UN TIPO DE MENU", Toast.LENGTH_SHORT).show();
+            btn_regMenu.setEnabled(true);
             return;
         } else {
             HashMap<String, String> mp = new HashMap<>();

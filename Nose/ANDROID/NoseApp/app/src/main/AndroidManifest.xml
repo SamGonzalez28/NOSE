@@ -49,7 +49,21 @@
             android:label="@string/title_activity_cliente__lateral"
             android:theme="@style/AppTheme" />
         <activity android:name=".Menu.ListarMenuParaCliente" />
-        <activity android:name=".Menu.PerfilMenu"></activity>
+        <activity android:name=".Menu.PerfilMenu" />
+        <activity android:name=".Menu.carrito" />
+
+        <service android:name=".Messaging.MiFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Messaging.MiFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Messaging.Pedido"></activity>
     </application>
 
 </manifest>

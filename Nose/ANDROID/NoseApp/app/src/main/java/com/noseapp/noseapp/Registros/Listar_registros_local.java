@@ -50,6 +50,10 @@ public class Listar_registros_local extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
+        oyente();
+
+    }
+    private void oyente() {
         VolleyPeticion<RegistrosJson[]> registros = Conexion.getListaRegistrosAdmin(
                 getApplicationContext(),
                 InicioActivity.TOKEN,
@@ -58,7 +62,6 @@ public class Listar_registros_local extends AppCompatActivity {
                 new Response.Listener<RegistrosJson[]>() {
                     @Override
                     public void onResponse(RegistrosJson[] response) {
-
                         listadeRegistrosAdap = new RegistrosAdapLocal(Arrays.asList(response),getApplicationContext());
                         mi_lista.setAdapter(listadeRegistrosAdap);
                     }
@@ -80,7 +83,5 @@ public class Listar_registros_local extends AppCompatActivity {
                 }
         );
         queue.add(registros);
-
     }
-
 }

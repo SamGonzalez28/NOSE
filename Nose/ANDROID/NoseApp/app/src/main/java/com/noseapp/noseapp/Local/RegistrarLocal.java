@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.noseapp.noseapp.Login.LoginActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
@@ -69,13 +70,15 @@ public class RegistrarLocal extends AppCompatActivity {
         String Direccion = this.domicilio.getText().toString().trim();
         String tlf = this.telefono.getText().toString().trim();
         String pass = this.password.getText().toString().trim();
-
+        String tokenMsg = FirebaseInstanceId.getInstance().getToken().toString();
+        Log.e("",tokenMsg);
         HashMap<String, String> mp = new HashMap<>();
         mp.put("nombre", name);
         mp.put("ruc", RUC);
         mp.put("direccion", Direccion);
         mp.put("telefono", tlf);
         mp.put("clave", pass);
+        mp.put("tokenMsg",tokenMsg);
         VolleyPeticion<LocalJson> registrarLocal = Conexion.registroLocal(
                 getApplicationContext(),
                 mp,

@@ -46,6 +46,10 @@ public class Listar_registros_cliente extends AppCompatActivity {
 
         queue = Volley.newRequestQueue(this);
 
+        oyente();
+
+    }
+    private void oyente() {
         VolleyPeticion<RegistrosJson[]> registros = Conexion.getListaRegistrosClientes(
                 getApplicationContext(),
                 InicioActivity.TOKEN,
@@ -76,7 +80,5 @@ public class Listar_registros_cliente extends AppCompatActivity {
                 }
         );
         queue.add(registros);
-
     }
-
 }

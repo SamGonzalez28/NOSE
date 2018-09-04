@@ -7,11 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.google.zxing.Result;
 import com.noseapp.noseapp.Menu.ListarMenuParaCliente;
 import com.noseapp.noseapp.Menu.Listar_menuActivity;
 import com.noseapp.noseapp.Registros.Listar_registros_cliente;
+import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
+import com.noseapp.noseapp.WS.Volley.Conexion;
+import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 

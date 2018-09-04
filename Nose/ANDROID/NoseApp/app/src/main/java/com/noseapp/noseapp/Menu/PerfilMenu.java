@@ -28,6 +28,7 @@ import java.util.HashMap;
  * Esta actividad se encarga de presentar los datos de un perfil seleccionado
  * a demas de dar la opcion de eliminarlo y modificarlo
  */
+
 public class PerfilMenu extends AppCompatActivity {
 
     EditText precio, descripcion;
@@ -95,6 +96,7 @@ public class PerfilMenu extends AppCompatActivity {
         VolleyPeticion<MenuJson> registrarMenu = Conexion.modificarMenu(
                 getApplicationContext(),
                 InicioActivity.itemListaLocal,
+                InicioActivity.TOKEN,
                 mp,
                 new Response.Listener<MenuJson>() {
                     @Override
@@ -120,6 +122,7 @@ public class PerfilMenu extends AppCompatActivity {
         VolleyPeticion<MenuJson> elimMenu = Conexion.eliminarMenu(
                 getApplicationContext(),
                 InicioActivity.itemListaLocal,
+                InicioActivity.TOKEN,
                 mp,
                 new Response.Listener<MenuJson>() {
                     @Override

@@ -3,6 +3,7 @@ package com.noseapp.noseapp.Login;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.ModelosJson.ClienteJson;
@@ -89,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                                     InicioActivity.ID_EXTERNAL = response.external_id;
                                     InicioActivity.NOMBRE_WELCOME = response.nombre;
                                     InicioActivity.TIPO = "L";
+                                    refreshToken();
                                     barra.setVisibility(View.GONE);
                                     Intent intent = new Intent(LoginActivity.this, Welcome.class);
                                     startActivity(intent);
@@ -107,6 +110,8 @@ public class LoginActivity extends AppCompatActivity {
                 );
                 requestQueue.add(inicio);
                 btn_log.setEnabled(false);
+
+
             }
         });
     }
@@ -150,5 +155,28 @@ public class LoginActivity extends AppCompatActivity {
                 }
         );
         requestQueue.add(inicioCli);
+    }
+    public void refreshToken() {
+
+        HashMap mp = new HashMap();
+        String token = InicioActivity.tokenMsg.toString();
+        mp.put("tokenMsg",token);
+        final VolleyPeticion<LocalJson> Local = Conexion.refreshToken(
+                getApplicationContext(),
+                InicioActivity.ID_EXTERNAL,
+                mp,
+                new Response.Listener<LocalJson>() {
+                    @Override
+                    public void onResponse(LocalJson response) {
+                        Log.e("WIN","refresh win");
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error","refresh ERROR");
+                    }
+                }
+        );
+        requestQueue.add(Local);
     }
 }

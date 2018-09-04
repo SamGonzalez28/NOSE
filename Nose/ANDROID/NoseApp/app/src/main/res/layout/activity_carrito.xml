@@ -14,15 +14,15 @@
         android:id="@+id/ListaCarrito"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:divider="@color/fondo"
-        android:dividerHeight="6dp"/>
+        android:divider="@color/algalFuel"
+        android:dividerHeight="0dp"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btn_flot_pedir"
         android:layout_width="@dimen/menu_100"
         android:layout_height="@dimen/menu_100"
-        app:backgroundTint="@color/icon"
-        app:srcCompat="@drawable/nuevo"
+        app:backgroundTint="@color/fondo"
+        app:srcCompat="@drawable/ic_menu_send"
         android:layout_marginLeft="@dimen/margen_20"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/margen_20"/>

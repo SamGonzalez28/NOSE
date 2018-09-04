@@ -17,28 +17,19 @@ import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Clase que adapta el contenido de una consulta para que pueda ser presentado
- * Consulta del modelo MenuJson
- * los menus que pertenecen a un local
- */
 public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
 
     private List<MenuJson> datalista;
     Context mContext;
-    ImageButton imb_borrar, imb_edit;
 
     public ListadeMenusAdap(List<MenuJson> lista, Context context) {
         super(context, R.layout.item_menu_local, lista);
         this.datalista = lista;
         this.mContext = context;
-
-
-
     }
 
     public ListadeMenusAdap(Context context) {
-        super(context,R.layout.item_menu_vacio_local, new ArrayList<MenuJson>());
+        super(context, R.layout.item_menu_vacio_local, new ArrayList<MenuJson>());
 
         this.datalista = new ArrayList<MenuJson>();
         this.mContext = context;
@@ -48,14 +39,12 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View item = inflater.inflate(R.layout.item_menu_local,null);
+        View item = inflater.inflate(R.layout.item_menu_local, null);
 
         TextView precio = (TextView) item.findViewById(R.id.txt_precio);
         precio.setText(datalista.get(position).precio);
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion);
         descripcion.setText(datalista.get(position).descripcion);
-        ImageView imagen = (ImageView) item.findViewById(R.id.img_menu);
-        String tipo = datalista.get(position).tipo;
 
         return item;
     }

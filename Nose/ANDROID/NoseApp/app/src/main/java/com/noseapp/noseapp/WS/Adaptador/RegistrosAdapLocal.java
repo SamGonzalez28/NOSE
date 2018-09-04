@@ -17,6 +17,7 @@ import java.util.List;
  * Clase que adapta el contenido de una consulta para que pueda ser presentado
  * Consulta del modelo RegistrosJson cuando se lista por local
  */
+
 public class RegistrosAdapLocal extends ArrayAdapter<RegistrosJson> {
 
     private List<RegistrosJson> datalista;
@@ -48,10 +49,7 @@ public class RegistrosAdapLocal extends ArrayAdapter<RegistrosJson> {
         fecha.setText(datalista.get(position).fecha);
 
         TextView nombre = (TextView) item.findViewById(R.id.txt_nombres1);
-        nombre.setText(datalista.get(position).cliente);
-
-        TextView cantidad = (TextView) item.findViewById(R.id.txt_cant1);
-        cantidad.setText(datalista.get(position).cantidad);
+        nombre.setText(datalista.get(position).id_cliente);
 
         TextView valor = (TextView) item.findViewById(R.id.txt_valor1);
         valor.setText(datalista.get(position).valor);
@@ -59,8 +57,6 @@ public class RegistrosAdapLocal extends ArrayAdapter<RegistrosJson> {
         TextView descripcion = (TextView) item.findViewById(R.id.txt_descripcion_m1);
         descripcion.setText(datalista.get(position).menu);
 
-        TextView precio = (TextView) item.findViewById(R.id.txt_precio1);
-        precio.setText(datalista.get(position).precio);
         return item;
     }
 }

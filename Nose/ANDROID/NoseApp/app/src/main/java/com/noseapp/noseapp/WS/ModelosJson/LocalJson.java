@@ -11,6 +11,7 @@ public class LocalJson {
     public String telefono;
     public String token;
     public String external_id;
+    public String tokenMsg;
     public String siglas;
 
 }
