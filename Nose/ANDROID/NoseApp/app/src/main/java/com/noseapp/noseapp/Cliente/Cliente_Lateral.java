@@ -21,6 +21,7 @@ import com.noseapp.noseapp.Registros.Listar_registros_cliente;
  * Esta actividad se encarga de el control y redireccion de las opciones que contiene
  * la barra lateral de Cliente
  */
+
 public class Cliente_Lateral extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -69,6 +70,9 @@ public class Cliente_Lateral extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(Cliente_Lateral.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
 

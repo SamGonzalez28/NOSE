@@ -80,6 +80,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cantidad">Escoja la Cantidad de platos</string>
     <string name="reg">Rellene todos los campos.</string>
+    <string name="cerrarSesion">Cerrar Sesion</string>
     <string-array name="cantidades">
         <item>1</item>
         <item>2</item>

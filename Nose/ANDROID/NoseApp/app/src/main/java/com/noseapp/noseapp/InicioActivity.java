@@ -37,6 +37,7 @@ public class InicioActivity extends AppCompatActivity {
      */
     public static String TOKEN = "";
     public static String tokenMsg = FirebaseInstanceId.getInstance().getToken().toString();
+    public static String tokenMsg = "";
     public static String ID_EXTERNAL = "";
     public static String ID_EXTERNAL_QR = "";
     public static String total = "";

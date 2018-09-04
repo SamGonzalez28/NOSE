@@ -49,30 +49,6 @@
         android:text="@string/descripcion"
         android:textSize="@dimen/letra18" />
 
-    <TextView
-        android:id="@+id/txt_cant"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/margen_20"
-        android:layout_marginTop="85dp"
-        android:layout_toRightOf="@id/img_registros"
-        android:text="@string/cant"
-        android:gravity="right"
-        android:textColor="@color/royalBlue"
-        android:textSize="@dimen/letra18" />
-
-    <TextView
-        android:id="@+id/txt_precio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/margen_20"
-        android:layout_marginTop="110dp"
-        android:layout_toRightOf="@id/img_registros"
-        android:text="@string/precio"
-        android:gravity="right"
-        android:textColor="@color/royalBlue"
-        android:textSize="@dimen/letra18" />
-
 
     <TextView
         android:id="@+id/txt_valor"

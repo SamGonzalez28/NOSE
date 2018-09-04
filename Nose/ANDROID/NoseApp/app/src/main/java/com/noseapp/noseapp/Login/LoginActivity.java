@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        InicioActivity.tokenMsg = FirebaseInstanceId.getInstance().getToken().toString();
         barra = (ProgressBar) findViewById(R.id.loading);
         ed_password = (EditText) findViewById(R.id.ed_password);
         ed_user = (EditText) findViewById(R.id.ed_user);

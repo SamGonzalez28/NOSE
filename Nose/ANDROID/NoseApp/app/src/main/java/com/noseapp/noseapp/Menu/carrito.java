@@ -31,6 +31,8 @@ import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.Local.Admin_Lateral;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.WS.Adaptador.ListadeMenusAdap;
+import com.noseapp.noseapp.WS.ModelosJson.AsociarClienteJson;
+import com.noseapp.noseapp.WS.ModelosJson.CarteraJson;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
 import com.noseapp.noseapp.WS.ModelosJson.RegistrosJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
@@ -79,8 +81,8 @@ public class carrito extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String carro = (String) InicioActivity.carrito.toString();
-                        String idCli = InicioActivity.ID_EXTERNAL;
-                        String idLoc = InicioActivity.ID_EXTERNAL_QR;
+                        String idCli = InicioActivity.ID_EXTERNAL.toString();
+                        String idLoc = InicioActivity.ID_EXTERNAL_QR.toString();
                         String valor = InicioActivity.total;
 
                         Log.e("mensaje", carro + "  -  " + idCli + " - " + idLoc + " - " + valor);
@@ -96,7 +98,8 @@ public class carrito extends AppCompatActivity {
                                     @Override
                                     public void onResponse(RegistrosJson response) {
                                         try {
-
+                                            regSesion();
+                                            regSaldo();
                                             enviar();
                                             Toast.makeText(carrito.this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(carrito.this, Cliente_Lateral.class);
@@ -197,5 +200,50 @@ public class carrito extends AppCompatActivity {
         };
 
         requestQueue.add(jsonRequest);
+    }
+
+    public void regSesion(){
+        HashMap <String, String>mp = new HashMap<>();
+        mp.put("id_cliente", InicioActivity.ID_EXTERNAL.toString());
+        mp.put("id_local", InicioActivity.ID_EXTERNAL_QR.toString());
+        VolleyPeticion<AsociarClienteJson> regSesion = Conexion.regSesion(
+                getApplicationContext(),
+                mp,
+                new Response.Listener<AsociarClienteJson>() {
+                    @Override
+                    public void onResponse(AsociarClienteJson response) {
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }
+        );
+        requestQueue.add(regSesion);
+    }
+
+    public void regSaldo(){
+        HashMap<String, String> mp = new HashMap<>();
+        mp.put("id_cliente", InicioActivity.ID_EXTERNAL.toString());
+        mp.put("id_local", InicioActivity.ID_EXTERNAL_QR.toString());
+        mp.put("saldo", InicioActivity.total.toString());
+        VolleyPeticion<CarteraJson> regCartera = Conexion.regCartera(
+                getApplicationContext(),
+                mp,
+                new Response.Listener<CarteraJson>() {
+                    @Override
+                    public void onResponse(CarteraJson response) {
+                        Log.e("reg cartera","si");
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("reg cartera","no");
+
+                    }
+                }
+        );
+        requestQueue.add(regCartera);
     }
 }

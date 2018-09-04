@@ -10,5 +10,7 @@ public class AsociarClienteJson  {
     public String nombres;
     public String apellidos;
     public String saldo;
+    public String id_cliente;
+    public String id_local;
 
 }
