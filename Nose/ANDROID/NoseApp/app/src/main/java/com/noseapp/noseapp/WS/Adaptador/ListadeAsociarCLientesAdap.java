@@ -13,7 +13,6 @@ import com.noseapp.noseapp.WS.ModelosJson.AsociarClienteJson;
 
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Clase que adapta el contenido de una consulta para que pueda ser presentado
  * Consulta del modelo AsociarClienteJson
@@ -44,8 +43,8 @@ public class ListadeAsociarCLientesAdap extends ArrayAdapter<AsociarClienteJson>
 
         View item = inflater.inflate(R.layout.item_sesion_local,null);
 
-        TextView saldo = (TextView) item.findViewById(R.id.txt_saldo_c);
-        saldo.setText(datalista.get(position).saldo);
+        TextView fechaAsc = (TextView) item.findViewById(R.id.txtFechaAsoci);
+        fechaAsc.setText(datalista.get(position).fecha.toString());
 
         TextView nombre = (TextView) item.findViewById(R.id.txt_nombres_c);
         nombre.setText(datalista.get(position).nombres);

@@ -20,7 +20,6 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * Contiene los metodos necesarios para realizar una peticion
  * @param <T> se envia el modelo, al cual hace referencia la peticion

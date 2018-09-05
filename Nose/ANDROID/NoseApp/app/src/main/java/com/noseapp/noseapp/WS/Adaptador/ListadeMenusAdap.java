@@ -17,6 +17,11 @@ import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que adapta el contenido de una consulta para que pueda ser presentado
+ * Consulta del modelo MenuJson
+ * los menus que pertenecen a un local
+ */
 public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
 
     private List<MenuJson> datalista;
@@ -34,7 +39,13 @@ public class ListadeMenusAdap extends ArrayAdapter<MenuJson> {
         this.datalista = new ArrayList<MenuJson>();
         this.mContext = context;
     }
-
+    /**
+     * Asigna los valoress consultados a la vista respectiva
+     * @param position          posicion en la que se colocaran
+     * @param convertView       contexto actual
+     * @param parent            el layout al que se adaptara
+     * @return                  retorna el item con la consulta
+     */
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

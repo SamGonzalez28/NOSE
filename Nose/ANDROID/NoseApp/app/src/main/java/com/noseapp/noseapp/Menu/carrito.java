@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -46,11 +47,18 @@ import java.util.Map;
 
 import javax.xml.transform.Result;
 
+/**
+ * Esta clase es importante para la funcionalidad de la aplicacion ya que en esta
+ * generamos una lista de los menus que el cliente escoge
+ * y dede esta enviamos al local la notificacion de que se hizo un nuevo pedido
+ * tambien dentro de esta clase registrmos una cartera y una sesion de cliente-local
+ */
 
 public class carrito extends AppCompatActivity {
     ListView lista;
     private ListadeMenusAdap listadeMenusAdap;
     private FloatingActionButton btn_pedir;
+    private TextView txtTot;
     RequestQueue requestQueue;
 
     @Override
@@ -59,13 +67,14 @@ public class carrito extends AppCompatActivity {
         setContentView(R.layout.activity_carrito);
 
         lista = (ListView) findViewById(R.id.ListaCarrito);
-
+        txtTot = (TextView) findViewById(R.id.txtTot);
         listadeMenusAdap = new ListadeMenusAdap(this);
         lista.setAdapter(listadeMenusAdap);
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
         final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, InicioActivity.carrito);
         lista.setAdapter(adapter);
+        txtTot.setText(InicioActivity.total.toString());
 
         btn_pedir = (FloatingActionButton) findViewById(R.id.btn_flot_pedir);
         btn_pedir.setOnClickListener(new View.OnClickListener() {

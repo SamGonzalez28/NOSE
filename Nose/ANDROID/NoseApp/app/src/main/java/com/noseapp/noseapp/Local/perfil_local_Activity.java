@@ -15,9 +15,8 @@ import com.noseapp.noseapp.WS.ModelosJson.ClienteJson;
 import com.noseapp.noseapp.WS.ModelosJson.LocalJson;
 import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
-
 /**
- * Esta actividad permite visualizar todos los datos de el local logeado
+ * Esta actividad permite registrar un local
  */
 public class perfil_local_Activity extends AppCompatActivity {
     TextView nombre, dire, RUC, tele, user;
@@ -61,6 +60,7 @@ public class perfil_local_Activity extends AppCompatActivity {
                     }
                 }
         );
+
         requestQueue.add(ver);
     }
 }

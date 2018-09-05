@@ -23,7 +23,6 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
-
 /**
  * Esta actividad permite listar todos los clientes de un local
  */

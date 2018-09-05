@@ -30,7 +30,7 @@
         android:textSize="@dimen/letra18" />
 
     <TextView
-        android:id="@+id/txt_nombres"
+        android:id="@+id/txtNomReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/margen_20"
@@ -51,7 +51,7 @@
 
 
     <TextView
-        android:id="@+id/txt_valor"
+        android:id="@+id/totReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/margen_20"

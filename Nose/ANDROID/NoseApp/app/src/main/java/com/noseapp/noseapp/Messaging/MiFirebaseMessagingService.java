@@ -10,11 +10,16 @@ import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.noseapp.noseapp.Local.Admin_Lateral;
 import com.noseapp.noseapp.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.noseapp.noseapp.Registros.Listar_registros_local;
 
-
+/**
+ * En esta clase es donde recibimos el la notificacion o mensaje que envian desde cliente con el pedido nuevo
+ * asi generando la notificacion en tiempo real
+ */
 public class MiFirebaseMessagingService extends FirebaseMessagingService {
 
     public static final String TAG = "NOTICIAS";
@@ -40,7 +45,7 @@ public class MiFirebaseMessagingService extends FirebaseMessagingService {
 
     private void mostrarNotificacion(String title, String body) {
 
-        Intent intent = new Intent(this, Pedido.class);
+        Intent intent = new Intent(this, Listar_registros_local.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 

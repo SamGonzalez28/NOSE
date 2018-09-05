@@ -26,5 +26,20 @@
         android:layout_marginLeft="@dimen/margen_20"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/margen_20"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/txtTot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100.50"
+            android:layout_alignEnd="@id/ListaCarrito"
+            android:layout_marginLeft="250dp"
+            android:textColor="@color/beniukonBronze"
+            android:textSize="40dp"/>
+    </LinearLayout>
 
 </RelativeLayout>

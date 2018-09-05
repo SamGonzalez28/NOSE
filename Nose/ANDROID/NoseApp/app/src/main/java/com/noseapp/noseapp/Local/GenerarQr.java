@@ -1,12 +1,10 @@
 package com.noseapp.noseapp.Local;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.zxing.BarcodeFormat;
@@ -17,7 +15,6 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
 import com.noseapp.noseapp.Save;
-
 /**
  * Esta actividad genera un codigo QR correspondiente al external de local
  * que sera usada por el cliente para acceder a dicho local
@@ -27,6 +24,7 @@ public class GenerarQr extends AppCompatActivity {
 
     BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
     Bitmap bitmap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +50,5 @@ public class GenerarQr extends AppCompatActivity {
                 saveFile.SaveImage(getBaseContext(),bmap);
             }
         });
-
-
-
-
     }
 }

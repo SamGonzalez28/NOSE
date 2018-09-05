@@ -23,7 +23,6 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
-
 /**
  * Actividad encargada de presentar una lista con los registros de locales
  */

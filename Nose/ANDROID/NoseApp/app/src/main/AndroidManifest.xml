@@ -31,7 +31,6 @@
         <activity android:name=".LectorQR" />
         <activity android:name=".Welcome" />
         <activity android:name=".Cliente.perfil_cliente_Activity" />
-        <activity android:name=".Cliente.ClienteActivity" />
         <activity android:name=".Local.GenerarQr" />
         <activity android:name=".Menu.Listar_menuActivity" />
         <activity android:name=".Local.perfil_local_Activity" />
@@ -63,7 +62,6 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".Messaging.Pedido"></activity>
     </application>
 
 </manifest>

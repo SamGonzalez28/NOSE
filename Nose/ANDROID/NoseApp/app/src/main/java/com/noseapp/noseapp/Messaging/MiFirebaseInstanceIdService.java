@@ -5,6 +5,10 @@ import android.util.Log;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
+/**
+ * Con esta clase obtenemos el token para enviar el mensaje
+ * éste token nos lo dá FirebaseCloudMessaging
+ */
 public class MiFirebaseInstanceIdService extends FirebaseInstanceIdService {
 
     public static final String TAG = "NOTICIAS";

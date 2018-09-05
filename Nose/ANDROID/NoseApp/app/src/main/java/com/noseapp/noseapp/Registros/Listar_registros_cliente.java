@@ -12,7 +12,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
-import com.noseapp.noseapp.Cliente.ClienteActivity;
 import com.noseapp.noseapp.Cliente.Cliente_Lateral;
 import com.noseapp.noseapp.InicioActivity;
 import com.noseapp.noseapp.R;
@@ -22,7 +21,6 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.Arrays;
-
 /**
  * Actividad encargada de presentar una lista con los registros de clientes
  */

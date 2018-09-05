@@ -18,7 +18,6 @@ import com.noseapp.noseapp.Login.LoginActivity;
 import com.noseapp.noseapp.WS.ModelosJson.MenuJson;
 
 import java.util.ArrayList;
-
 /**
  *  Esta clase controla la pantalla de inicio de la aplicacion
  *  e inicializa las variables de sesion staticas que se
@@ -26,7 +25,6 @@ import java.util.ArrayList;
  */
 
 public class InicioActivity extends AppCompatActivity {
-
     /**
      * Variable que define el tiempo que tarda la actividad de inicio en espera
      */
@@ -36,7 +34,6 @@ public class InicioActivity extends AppCompatActivity {
      * Variables estaticas que almacenan datos que se usaran posteriormente
      */
     public static String TOKEN = "";
-    public static String tokenMsg = FirebaseInstanceId.getInstance().getToken().toString();
     public static String tokenMsg = "";
     public static String ID_EXTERNAL = "";
     public static String ID_EXTERNAL_QR = "";
@@ -47,7 +44,6 @@ public class InicioActivity extends AppCompatActivity {
     public static String nombreLocal="";
 
     public static ArrayList<String> carrito = new ArrayList<>();
-
     /**
      * Contiene todo lo que que ocurre al iniciarse la actividad
      * @param savedInstanceState
@@ -66,8 +62,8 @@ public class InicioActivity extends AppCompatActivity {
         }, splash);
         verifyStoragePermissions(this);
 
-        Log.e("token...",FirebaseInstanceId.getInstance().getToken().toString());
-        Log.e("VARIABLE",InicioActivity.tokenMsg.toString());
+       // Log.e("token...",FirebaseInstanceId.getInstance().getToken().toString());
+        // Log.e("VARIABLE",InicioActivity.tokenMsg.toString());
     }
 
     private static final int REQUEST_EXTERNAL_STORAGE = 1;

@@ -29,11 +29,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Esta actividad permite registrar un local
- */
 public class RegistrarLocal extends AppCompatActivity {
-
+    /**
+     * Esta actividad permite registrar un local
+     */
     TextView nombre, ruc, domicilio, telefono, password;
     private Button btn_regLocal;
     private ProgressBar barra;

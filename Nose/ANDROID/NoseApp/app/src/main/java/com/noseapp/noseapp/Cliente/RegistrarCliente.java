@@ -19,16 +19,21 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
-/**
- * Esta actividad permite registrar un cliente
- */
-public class RegistrarCliente extends AppCompatActivity {
 
+public class RegistrarCliente extends AppCompatActivity {
+    /**
+     * Esta actividad permite registrar un cliente
+     */
     private EditText txt_nombresCli, txt_apellidosCli, txt_cedulaCli, txt_emailCli,
             txt_direccionCli, txt_tlf, txt_userCli, txt_passwordCli;
     private Button btn_regCli;
     RequestQueue requestQueue;
 
+    /**
+     * Obtenemos los valores de cada textView y en la clase oyente comprobamos que no sean vacios
+     * ya comproba se envian mediante un HashMap los tatos al webService para que se almacenen en la base de datos
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +58,7 @@ public class RegistrarCliente extends AppCompatActivity {
             }
         });
     }
+
     public void oyente() {
         String name = this.txt_nombresCli.getText().toString().trim();
         String lastname = this.txt_apellidosCli.getText().toString().trim();

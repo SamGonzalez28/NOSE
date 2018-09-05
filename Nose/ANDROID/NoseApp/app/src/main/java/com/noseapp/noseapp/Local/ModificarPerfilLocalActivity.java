@@ -22,7 +22,6 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.HashMap;
-
 /**
  * Esta actividad presenta el perfil de local
  * y da la opcion de modificar los satos

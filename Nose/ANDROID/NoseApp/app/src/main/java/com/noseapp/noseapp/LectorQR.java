@@ -22,13 +22,18 @@ import com.noseapp.noseapp.WS.Volley.Conexion;
 import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
 /**
  * Clase utilizada para Leer el QR
  */
 public class LectorQR extends AppCompatActivity {
     TextView codigo;
     private ZXingScannerView vistaescaner;
+
+    /**
+     * Usamos la libreria ZXING que ya viene predefinido las acciones de leer cogigos incriptados
+     * en nuestro caso leemos codigos QR
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

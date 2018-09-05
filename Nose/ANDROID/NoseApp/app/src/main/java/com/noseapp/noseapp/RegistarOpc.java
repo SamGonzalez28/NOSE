@@ -9,8 +9,19 @@ import android.widget.ImageButton;
 import com.noseapp.noseapp.Cliente.RegistrarCliente;
 import com.noseapp.noseapp.Local.RegistrarLocal;
 
+/**
+ * Clase Usada para que el usuario elija la opcion de registrarse como
+ * Local o como Ciente
+ */
 public class RegistarOpc extends AppCompatActivity {
-
+    /**
+     * Metodo que se ejecuta al crearse la actividad
+     * Presenta la opcion de registrandose como
+     * un local o un cliente
+     * redirige hacia las actividades
+     * RegistrarLocal y Registrar Cliente
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +35,6 @@ public class RegistarOpc extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistarOpc.this, RegistrarLocal.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -33,7 +43,6 @@ public class RegistarOpc extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(RegistarOpc.this, RegistrarCliente.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

@@ -6,11 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.noseapp.noseapp.Cliente.ClienteActivity;
 import com.noseapp.noseapp.Cliente.Cliente_Lateral;
 import com.noseapp.noseapp.Local.Admin_Lateral;
-
 /**
  * Actividad que discierne si el usuario logeado es un local o un cliente
  */

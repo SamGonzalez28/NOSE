@@ -31,7 +31,6 @@ import com.noseapp.noseapp.WS.Volley.VolleyPeticion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 /**
  * Actividad encargada de listar menus,
  * para que el cliente pueda elegir de entre los menus del local
@@ -45,6 +44,7 @@ public class ListarMenuParaCliente extends AppCompatActivity {
     private FloatingActionButton btn_carrito;
     private String e;
     private String preMenu;
+    private String cant;
     private String descrpMenu;
     private double tot = 0;
     RequestQueue requestQueue;
@@ -76,7 +76,7 @@ public class ListarMenuParaCliente extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 descrpMenu = listadeMenusAdap.getItem(position).descripcion;
                 preMenu = listadeMenusAdap.getItem(position).precio;
-                e = "" + descrpMenu;
+                e = descrpMenu;
                 if (InicioActivity.carrito.contains(e)) {
                     Toast.makeText(ListarMenuParaCliente.this, "ESTA REPETIDO", Toast.LENGTH_SHORT).show();
                 } else {
@@ -94,12 +94,13 @@ public class ListarMenuParaCliente extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             if (!mSpinner.getSelectedItem().toString().equalsIgnoreCase("Escoja una opcion..")) {
-                                String cant = mSpinner.getSelectedItem().toString();
+                                cant = mSpinner.getSelectedItem().toString();
+
                                 double sub = Double.parseDouble(cant) * Double.parseDouble(preMenu);
 
                                 tot = tot + sub;
                                 InicioActivity.total = "" + tot;
-                                InicioActivity.carrito.add(e);
+                                InicioActivity.carrito.add(cant+"-" +e);
                                 Toast.makeText(ListarMenuParaCliente.this, "AGREGADO A CARRITO  " + tot + "----" + InicioActivity.carrito, Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
@@ -177,7 +178,6 @@ public class ListarMenuParaCliente extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "hgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfm", Toast.LENGTH_SHORT).show();
                     }
                 }
         );
@@ -200,7 +200,6 @@ public class ListarMenuParaCliente extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), "hgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfmhgdfmhgfghfvghvghfvghfhfm", Toast.LENGTH_SHORT).show();
                     }
                 }
         );

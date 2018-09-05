@@ -10,12 +10,13 @@ import com.noseapp.noseapp.Cliente.RegistrarCliente;
 import com.noseapp.noseapp.Local.RegistrarLocal;
 import com.noseapp.noseapp.R;
 
-/**
- * Esta actividad permite seleccionar de que manera se registrara un usuario
- * siendo llamada de Login Activity
- * redirigiendo a RegistrarLocal, y RegistrarCliente respectivamente
- */
 public class RegistarOpc extends AppCompatActivity {
+
+    /**
+     * Esta actividad permite seleccionar de que manera se registrara un usuario
+     * siendo llamada de Login Activity
+     * redirigiendo a RegistrarLocal, y RegistrarCliente respectivamente
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
